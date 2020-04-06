@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Caslon CP";
+  src: url(../assets/fonts/ccp_light.otf) format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Caslon CP";
+  src: url(../assets/fonts/ccp_bold.otf) format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url(../assets/fonts/cg.ttf) format("truetype");
+  font-style: normal;
+}
+
+html,
+body {
+  /* overflow: hidden; */
+}
+
+.main-container {
+  display: flex;
+  height: auto;
+  width: 100vw;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.sec1 {
+  width: 100vw;
+  height: 100vh;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.counter {
+  background: #e7aea3;
+  width: 16vw;
+  height: 9.2vh;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+#treesNumInput {
+  background: #577f67;
+  border: none;
+  padding: 15px;
+  height: 100%;
+  color: #e7aea3;
+  font-family: "CaslonCP", sans-serif;
+  font-size: 2.5em;
+  text-align: center;
+  width: 7.5vw;
+  outline: none;
+}
+
+#trees_title {
+  font-family: "CaslonCP", sans-serif;
+  color: #1d392a;
+  margin-top: 1vh;
+  font-weight: lighter;
+}
+
+.operator {
+  font-size: 2.5em;
+  color: #577f67;
+  cursor: pointer;
+}
+
+.counter-undertext {
+  font-family: "Century Gothic", sans-serif;
+  margin-top: 2vh;
+  font-size: 1.3em;
+}
+
+.price {
+  border-bottom: 1px solid rgb(74, 74, 74, 0.6);
+}
+
+.treeVisual {
+  width: 70vw;
+  height: 50vh;
+  box-shadow: 5px 5px 20px 0 rgba(20, 20, 20, 0.09);
+  margin-top: 1vh;
+  /* border-radius: 10px; */
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.tree {
+  width: 150px;
+  height: 150px;
+  background: url(../assets/images/LOGO-single.png);
+  background-size: cover;
+}
+
+.adopt-btn {
+  background: #1d392a;
+  font-family: "CaslonCP", sans-serif;
+  color: #fff;
+  padding: 20px 40px 20px 40px;
+  position: relative;
+  top: 1vh;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.redirect-subtxt {
+  font-family: "Century Gothic", sans-serif;
+}
+
+.sec2 {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 20;
+}
+
+@media (max-width: 420px) {
+  #trees_title {
+    font-size: 1.4em;
+  }
+
+  .counter {
+    width: 38vw;
+    height: 6.5vh;
+  }
+
+  #treesNumInput {
+    width: 16vw;
+    font-size: 2em;
+  }
+
+  .operator {
+    font-size: 2em;
+  }
+
+  .tree {
+    width: 110px;
+    height: 110px;
+  }
+}

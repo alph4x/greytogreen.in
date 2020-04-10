@@ -9,7 +9,7 @@ export default class adoptComponent extends React.Component {
     super();
     this.state = {
       numTrees: 4, //Default no of trees
-      treePrice: 1, //Change tree price here (this will be static)
+      treePrice: 10, //Change tree price here (this will be static)
       totalPrice: 0, //Default no of trees' price (don't change here, gets calculated automatically later)
       first_term: 5,
     };
@@ -26,6 +26,7 @@ export default class adoptComponent extends React.Component {
     var tp = this.state.treePrice;
     this.setState({ numTrees: newNum });
     this.setState({ totalPrice: newNum * tp });
+    console.log(this.state.totalPrice);
     document.getElementById("treesNumInput").value = newNum;
     const _tree = document.getElementsByClassName("tree");
     var delta = 20;
@@ -82,10 +83,10 @@ export default class adoptComponent extends React.Component {
 
   openCheckout() {
     let options = {
-      key: "rzp_test_uzYSFQbQva17DS",
+      key: "",
       amount: this.state.totalPrice,
       name: this.state.name,
-      description: "trees",
+      description: "Planting for a greener future",
       image: logo,
       order_id: this.state.order_id,
       handler: function (response) {
@@ -94,13 +95,13 @@ export default class adoptComponent extends React.Component {
       prefill: {
         name: this.state.name,
         email: this.state.email,
-        phone: this.state.phone,
+        contact: this.state.phone,
       },
       notes: {
         address: "notes address",
       },
       theme: {
-        color: "#F37254",
+        color: "#577F67",
       },
     };
 
@@ -112,15 +113,15 @@ export default class adoptComponent extends React.Component {
   async submitHandler() {
     console.log("old client order", this.state.order_id);
     //get order details from server
+    console.log("axios", this.state.totalPrice);
     await axios
       .post("http://localhost:5500/pay/razorpay", {
-        price: this.state.totalPrice * 100,
+        price: this.state.totalPrice,
       })
       .then((response) => {
         console.log(response.data);
         this.setState({ ...this.state, order_id: response.data.id });
       });
-    console.log("new client order", this.state.order_id);
     //razorpay
     this.openCheckout();
   }

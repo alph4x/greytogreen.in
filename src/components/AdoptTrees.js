@@ -2,7 +2,8 @@ import React from "react";
 import "./adoptTrees.css";
 import { logo } from "../assets/images/LOGO-2.png";
 import AdoptForm from "./AdoptForm.js";
-import axios from "axios";
+
+import { Helmet } from "react-helmet";
 
 export default class adoptComponent extends React.Component {
   constructor(props) {
@@ -81,49 +82,39 @@ export default class adoptComponent extends React.Component {
     this.updateConf(newVal);
   }
 
-  openCheckout() {
-    let options = {
-      key: "",
-      amount: this.state.totalPrice,
-      name: this.state.name,
-      description: "Planting for a greener future",
-      image: logo,
-      order_id: this.state.order_id,
-      handler: function (response) {
-        alert(response.razorpay_payment_id);
+  checkout() {
+    var RequestData = {
+      key: "rjQUPktU",
+      txnid: "2389428123",
+      hash:
+        "4F2CC978994208D150D16610572D28BD70AF38A1B3CDA2B1076EA2894670CD3F662C0CA3A2215908300DA63A723A7A3F2C8198FAD09C6C50D3A55AA389BFAF84",
+      amount: "132",
+      firstname: "Jaysinh",
+      email: "dummyemail@dummy.com",
+      phone: "6111111111",
+      productinfo: "Bag",
+      surl: "https://sucess-url.in",
+      furl: "https://fail-url.in",
+      // non-mandatory for Customized Response Handling
+    };
+
+    var Handler = {
+      responseHandler: function (BOLT) {
+        // your payment response Code goes here, BOLT is the response object
+        alert("SUCCESS", BOLT);
       },
-      prefill: {
-        name: this.state.name,
-        email: this.state.email,
-        contact: this.state.phone,
-      },
-      notes: {
-        address: "notes address",
-      },
-      theme: {
-        color: "#577F67",
+      catchException: function (BOLT) {
+        // the code you use to handle the integration errors goes here
+        console.log("FAILED", BOLT);
       },
     };
 
-    let rzp = new window.Razorpay(options);
-    rzp.open();
+    window.bolt.launch(RequestData, Handler);
   }
 
   //SUBMIT BUTTON HANDLER
   async submitHandler() {
-    console.log("old client order", this.state.order_id);
-    //get order details from server
-    console.log("axios", this.state.totalPrice);
-    await axios
-      .post("http://localhost:5500/pay/razorpay", {
-        price: this.state.totalPrice,
-      })
-      .then((response) => {
-        console.log(response.data);
-        this.setState({ ...this.state, order_id: response.data.id });
-      });
-    //razorpay
-    this.openCheckout();
+    await this.checkout();
   }
 
   componentWillMount() {
@@ -134,14 +125,6 @@ export default class adoptComponent extends React.Component {
     for (var i = 0; i < trees_num; i++) {
       this.trees_div.push(tree_div);
     }
-  }
-
-  componentDidMount() {
-    //adding razorpay script
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.async = true;
-    document.body.appendChild(script);
   }
 
   async getFormDetails(formData) {
@@ -157,6 +140,21 @@ export default class adoptComponent extends React.Component {
   render() {
     return (
       <div className="main-container">
+        <Helmet>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          />
+          <script
+            id="bolt"
+            crossorigin
+            src="https://sboxcheckout-static.citruspay.com/bolt/run/bolt.min.js"
+            Access-Control-Allow-Origin="*"
+            bolt-
+            color="<color-code>"
+            bolt-logo="<image path>"
+          />
+        </Helmet>
         <div className="sec1">
           <h1 id="trees_title" className="title is-1 center">
             How many trees do you want to adopt?

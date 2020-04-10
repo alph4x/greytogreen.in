@@ -2,6 +2,7 @@ import React from "react";
 import "./adoptTrees.css";
 import { logo } from "../assets/images/LOGO-2.png";
 import AdoptForm from "./AdoptForm.js";
+import axios from "axios";
 
 export default class adoptComponent extends React.Component {
   constructor(props) {
@@ -12,33 +13,6 @@ export default class adoptComponent extends React.Component {
       totalPrice: 0, //Default no of trees' price (don't change here, gets calculated automatically later)
       first_term: 5,
     };
-  }
-
-  openCheckout() {
-    let options = {
-      key: process.env.RZPKey,
-      amount: this.state.treePrice,
-      name: "test_name",
-      description: "trees",
-      image: logo,
-      order_id: "test_orderID",
-      handler: function (response) {
-        alert(response.razorpay_payment_id);
-      },
-      prefill: {
-        name: "test prefill name",
-        email: "testprefill@email.com",
-      },
-      notes: {
-        address: "notes address",
-      },
-      theme: {
-        color: "#F37254",
-      },
-    };
-
-    let rzp = new window.Razorpay(options);
-    rzp.open();
   }
 
   performOp(e) {
@@ -106,11 +80,49 @@ export default class adoptComponent extends React.Component {
     this.updateConf(newVal);
   }
 
+  openCheckout() {
+    let options = {
+      key: "rzp_test_uzYSFQbQva17DS",
+      amount: this.state.totalPrice,
+      name: this.state.name,
+      description: "trees",
+      image: logo,
+      order_id: this.state.order_id,
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+      },
+      prefill: {
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+      },
+      notes: {
+        address: "notes address",
+      },
+      theme: {
+        color: "#F37254",
+      },
+    };
+
+    let rzp = new window.Razorpay(options);
+    rzp.open();
+  }
+
   //SUBMIT BUTTON HANDLER
-  submitHandler() {
-    // console.log(this.state);
-    let data = { numTrees: this.state.numTrees, price: this.state.totalPrice };
-    this.props.sendData(data);
+  async submitHandler() {
+    console.log("old client order", this.state.order_id);
+    //get order details from server
+    await axios
+      .post("http://localhost:5500/pay/razorpay", {
+        price: this.state.totalPrice * 100,
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.setState({ ...this.state, order_id: response.data.id });
+      });
+    console.log("new client order", this.state.order_id);
+    //razorpay
+    this.openCheckout();
   }
 
   componentWillMount() {
@@ -121,6 +133,24 @@ export default class adoptComponent extends React.Component {
     for (var i = 0; i < trees_num; i++) {
       this.trees_div.push(tree_div);
     }
+  }
+
+  componentDidMount() {
+    //adding razorpay script
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+  async getFormDetails(formData) {
+    await this.setState({
+      ...this.state,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+    });
+    console.log(this.state);
   }
 
   render() {
@@ -172,12 +202,7 @@ export default class adoptComponent extends React.Component {
           </center>
           <br />
           <div className="center">
-            <span
-              className="adopt-btn center"
-              onClick={this.submitHandler.bind(this)}
-            >
-              ADOPT NOW
-            </span>
+            <span className="adopt-btn center">ADOPT NOW</span>
             <br />
             <br />
             <span className="redirect-subtxt center">
@@ -189,7 +214,10 @@ export default class adoptComponent extends React.Component {
           <br />
           <br />
         </div>
-        <AdoptForm />
+        <AdoptForm
+          payNow={this.submitHandler.bind(this)}
+          getFormDetails={this.getFormDetails.bind(this)}
+        />
       </div>
     );
   }

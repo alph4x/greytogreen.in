@@ -15,10 +15,14 @@ function SectionHeader(props) {
               className={
                 "title is-spaced has-text-weight-bold" +
                 (props.size ? ` is-${props.size}` : "") +
-                (props.size === 1 ? " is-size-2-mobile" : "")
+                (props.size === 1 ? " is-size-2-mobile" : "") +
+                " is-century"
               }
             >
-              {props.title}
+              <span className="grey-font">grey</span>
+              <span className="lightgreen-font">to</span>
+              <span className="darkgreen-font">green</span>
+              {/* {props.title} */}
             </h1>
           )}
 

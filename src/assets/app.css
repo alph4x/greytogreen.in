@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Caslon CP";
+  src: url(../assets/fonts/ccp_light.otf) format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Caslon CP";
+  src: url(../assets/fonts/ccp_bold.otf) format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url(../assets/fonts/cg.ttf) format("truetype");
+  font-style: normal;
+}
+
+.is-caslon {
+  font-family: "Caslon CP" !important;
+}
+
+.is-century {
+  font-family: "Century Gothic" !important;
+}
+
+.is-darkgreen {
+  background-color: #1e3a2b !important;
+}
+
+.is-lightgreen {
+  background-color: #577f67 !important;
+}
+
+.is-lightergreen {
+  background-color: #d0e1d2 !important;
+}
+
+.is-pink {
+  background-color: #e6b0a4 !important;
+}
+
+.is-grey {
+  background-color: #808080 !important;
+}
+
+.grey-font {
+  color: #808080 !important;
+}
+
+.lightgreen-font {
+  color: #577f67 !important;
+}
+
+.darkgreen-font {
+  color: #1e3a2b !important ;
+}

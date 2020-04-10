@@ -67,7 +67,7 @@ input[type="number"] {
   padding: 15px;
   height: 100%;
   color: #e7aea3;
-  font-family: "CaslonCP", sans-serif;
+  font-family: "Caslon CP", sans-serif;
   font-size: 2.5em;
   text-align: center;
   width: 7.5vw;
@@ -75,7 +75,7 @@ input[type="number"] {
 }
 
 #trees_title {
-  font-family: "CaslonCP", sans-serif;
+  font-family: "Caslon CP", sans-serif;
   color: #1d392a;
   margin-top: 1vh;
   font-weight: lighter;
@@ -121,13 +121,16 @@ input[type="number"] {
 
 .adopt-btn {
   background: #1d392a;
-  font-family: "CaslonCP", sans-serif;
+  font-family: "Caslon CP", sans-serif;
   color: #fff;
+  font-size: 24px;
   padding: 20px 40px 20px 40px;
   position: relative;
   top: 1vh;
   border-radius: 5px;
   cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .redirect-subtxt {

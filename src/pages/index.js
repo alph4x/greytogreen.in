@@ -12,13 +12,13 @@ function IndexPage(props) {
   return (
     <>
       <HeroSection
-        color="primary"
+        color="lightergreen"
         size="large"
-        title="Your landing page title here"
+        title="as" //unfunctional as hardcoded inside the component
         subtitle="This landing page is perfect for showing off your awesome product and driving people to sign up for a paid plan."
-        buttonText="Start Free Trial"
+        buttonText="Adopt now"
         buttonOnClick={() => {
-          router.push("/pricing");
+          router.push("/adopt");
         }}
       />
       <FeaturesSection

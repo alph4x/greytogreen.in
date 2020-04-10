@@ -1,6 +1,7 @@
 import React from "react";
 import "./adoptTrees.css";
-import "./AdoptForm.js";
+import { logo } from "../assets/images/LOGO-2.png";
+import AdoptForm from "./AdoptForm.js";
 
 export default class adoptComponent extends React.Component {
   constructor(props) {
@@ -11,6 +12,33 @@ export default class adoptComponent extends React.Component {
       totalPrice: 0, //Default no of trees' price (don't change here, gets calculated automatically later)
       first_term: 5,
     };
+  }
+
+  openCheckout() {
+    let options = {
+      key: process.env.RZPKey,
+      amount: this.state.treePrice,
+      name: "test_name",
+      description: "trees",
+      image: logo,
+      order_id: "test_orderID",
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+      },
+      prefill: {
+        name: "test prefill name",
+        email: "testprefill@email.com",
+      },
+      notes: {
+        address: "notes address",
+      },
+      theme: {
+        color: "#F37254",
+      },
+    };
+
+    let rzp = new window.Razorpay(options);
+    rzp.open();
   }
 
   performOp(e) {
@@ -161,9 +189,7 @@ export default class adoptComponent extends React.Component {
           <br />
           <br />
         </div>
-        <div className="sec2">
-          <div className="payment-form">{/* Adopt now form here */}</div>
-        </div>
+        <AdoptForm />
       </div>
     );
   }

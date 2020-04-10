@@ -9,14 +9,15 @@ import adoptPage from "./adoptPage";
 import { Switch, Route, Router } from "./../util/router.js";
 import Divider from "./../components/Divider";
 import Footer from "./../components/Footer";
-import logoWhite from "../assets/flex-letter-white.png";
-import logo from "../assets/flex-letter.png";
+// import logoWhite from "../assets/fonts/";
+import logo from "../assets/images/LOGO-2.png";
+import "../assets/app.css";
 
 function App(props) {
   return (
     <Router>
       <>
-        <Navbar color="primary" spaced={true} logo={logoWhite} />
+        <Navbar color="lightergreen" spaced={true} logo={logo} />
 
         <Switch>
           <Route exact path="/" component={IndexPage} />
@@ -38,7 +39,7 @@ function App(props) {
                   style={{
                     padding: "50px",
                     width: "100%",
-                    textAlign: "center"
+                    textAlign: "center",
                   }}
                 >
                   The page <code>{location.pathname}</code> could not be found.

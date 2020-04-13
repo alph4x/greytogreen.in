@@ -12,29 +12,20 @@ function SectionButton(props) {
 
   return (
     <button
+      style={{
+        backgroundColor: "#1e3a2b",
+        border: "2px",
+        borderRadius: "15px",
+      }}
       className={
         "button" +
-        ([
-          "primary",
-          "info",
-          "success",
-          "warning",
-          "danger",
-          "black",
-          "dark",
-        ].includes(parentColor)
-          ? ` is-${parentColor} is-inverted`
-          : "") +
-        (["white", "light"].includes(parentColor) || !parentColor
-          ? " is-primary"
-          : "") +
         (size ? ` is-${size}` : "") +
         (state ? ` is-${state}` : "") +
         (fullWidth ? " is-fullwidth" : "")
       }
       {...otherProps}
     >
-      {props.children}
+      <span style={{ color: "#fff" }}>{props.children}</span>
     </button>
   );
 }

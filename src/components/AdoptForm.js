@@ -66,8 +66,8 @@ export default class AdoptForm extends React.Component {
           </Container>
         </Jumbotron>
         <div className="payment-form">
-          <Card style={{ width: "18rem", "text-align": "center" }}>
-            <Card.Title id="card-title" style={{ "text-align": "center" }}>
+          <Card style={{ width: "18rem", textAlign: "center" }}>
+            <Card.Title id="card-title" style={{ textAlign: "center" }}>
               Title
             </Card.Title>
             <Form className="form" onSubmit={this.onSubmitHandler.bind(this)}>

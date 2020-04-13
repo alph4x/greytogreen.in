@@ -1,6 +1,6 @@
 import React from "react";
 import "./adoptTrees.css";
-import { logo } from "../assets/images/LOGO-2.png";
+import logo from "../assets/images/LOGO-2.png";
 import AdoptForm from "./AdoptForm.js";
 import axios from "axios";
 
@@ -13,6 +13,8 @@ export default class adoptComponent extends React.Component {
       totalPrice: 0, //Default no of trees' price (don't change here, gets calculated automatically later)
       first_term: 5,
     };
+
+    this.openCheckout = this.openCheckout.bind(this);
   }
 
   performOp(e) {
@@ -90,7 +92,41 @@ export default class adoptComponent extends React.Component {
       image: logo,
       order_id: this.state.order_id,
       handler: function (response) {
-        alert(response.razorpay_payment_id);
+        //captures frontend details & response details
+        let objToSend = {
+          ...response,
+          name: this.state.name,
+          email: this.state.email,
+          phone: this.state.phone,
+          totalPrice: this.state.totalPrice,
+          amount: this.state.numTrees,
+        };
+        //send all details to server
+        axios.post("http://localhost:4500/getDetails/razorpay", objToSend);
+      },
+      external: {
+        wallets: ["paytm"],
+        handler: async function (data) {
+          let id;
+          let objToSend = {
+            ...data,
+            //razorpay sends amount in paise, instead of rs (/100)
+            amount: data.amount / 100,
+            trees: this.state.numTrees,
+          };
+          //send frontend details to server(DB) and get an ID
+          await axios
+            .post("http://localhost:4500/getDetails/paytm", objToSend)
+            .then((response) => {
+              id = response.data.id;
+            });
+          //redirect to paytm payment page
+          window.location =
+            "http://localhost:4500/pay/paywithpaytm/:" +
+            id +
+            "?amount=" +
+            this.state.totalPrice;
+        },
       },
       prefill: {
         name: this.state.name,
@@ -105,24 +141,24 @@ export default class adoptComponent extends React.Component {
       },
     };
 
+    options.handler = options.handler.bind(this);
+    options.external.handler = options.external.handler.bind(this);
+
     let rzp = new window.Razorpay(options);
     rzp.open();
   }
 
   //SUBMIT BUTTON HANDLER
   async submitHandler() {
-    console.log("old client order", this.state.order_id);
-    //get order details from server
-    console.log("axios", this.state.totalPrice);
+    //get server generated order details
     await axios
-      .post("http://localhost:5500/pay/razorpay", {
+      .post("http://localhost:4500/pay/razorpay", {
         price: this.state.totalPrice,
       })
       .then((response) => {
-        console.log(response.data);
         this.setState({ ...this.state, order_id: response.data.id });
       });
-    //razorpay
+    //razorpay handler
     this.openCheckout();
   }
 

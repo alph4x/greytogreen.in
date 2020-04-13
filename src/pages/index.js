@@ -16,11 +16,12 @@ function IndexPage(props) {
         size="large"
         title="as" //unfunctional as hardcoded inside the component
         subtitle="This landing page is perfect for showing off your awesome product and driving people to sign up for a paid plan."
-        buttonText="Adopt now"
+        buttonText="ADOPT NOW"
         buttonOnClick={() => {
           router.push("/adopt");
         }}
       />
+      <div className="is-pink" style={{ height: "1rem" }}></div>
       <FeaturesSection
         color="white"
         size="medium"

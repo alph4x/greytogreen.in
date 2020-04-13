@@ -55,7 +55,7 @@ function App(props) {
           size="medium"
           logo={logo}
           description="A short description of what you do here"
-          copyright="© Company Name"
+          copyright="© greytogreen"
         />
       </>
     </Router>

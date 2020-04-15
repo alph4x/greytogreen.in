@@ -39,6 +39,9 @@ export default class HeroSection extends React.Component {
         >
           <SectionHeader
             title={this.props.title}
+            greyTitle={this.props.greyTitle}
+            lightgreenTitle={this.props.lightgreenTitle}
+            darkgreenTitle={this.props.darkgreenTitle}
             subtitle={this.props.subtitle}
             centered={true}
             size={1}

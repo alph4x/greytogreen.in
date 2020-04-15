@@ -14,8 +14,11 @@ function IndexPage(props) {
       <HeroSection
         color="lightergreen"
         size="large"
-        title="as" //unfunctional as hardcoded inside the component
-        subtitle="This landing page is perfect for showing off your awesome product and driving people to sign up for a paid plan."
+        title=""
+        greyTitle="grey"
+        lightgreenTitle="to"
+        darkgreenTitle="green"
+        subtitle="planting for a greener future"
         buttonText="ADOPT NOW"
         buttonOnClick={() => {
           router.push("/adopt");
@@ -25,8 +28,8 @@ function IndexPage(props) {
       <FeaturesSection
         color="white"
         size="medium"
-        title="Features"
-        subtitle="All the features you need to move faster"
+        title="in a nutshell"
+        subtitle="here's an overall view of the functions we perform and the services we offer"
       />
       <ClientsSection
         color="light"

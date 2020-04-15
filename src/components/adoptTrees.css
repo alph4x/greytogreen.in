@@ -79,6 +79,7 @@ input[type="number"] {
   color: #1d392a;
   margin-top: 1vh;
   font-weight: lighter;
+  padding-top: 2rem;
 }
 
 .operator {

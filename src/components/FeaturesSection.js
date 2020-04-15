@@ -3,6 +3,10 @@ import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Features from "./Features";
 import "./FeaturesSection.scss";
+import features1 from "../assets/images/features-1.jpeg";
+import features2 from "../assets/images/features-2.jpeg";
+import features3 from "../assets/images/features-3.jpeg";
+import features4 from "../assets/images/features-4.jpeg";
 
 function FeaturesSection(props) {
   return (
@@ -19,31 +23,29 @@ function FeaturesSection(props) {
             columns={2}
             items={[
               {
-                title: "Lorem Ipsum",
+                title: "adopt with just a click",
                 body:
-                  "Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.",
-                image: "https://uploads.divjoy.com/undraw-fish_bowl_uu88.svg"
+                  "we provde a user-friendly platform through which adopting & planting saplings is only a click of buttons away!",
+                image: features1,
               },
               {
-                title: "Lorem Ipsum",
+                title: "we support local businesses",
                 body:
-                  "Nunc nulla mauris, laoreet vel cursus lacinia, consectetur sit amet tellus.",
-                image: "https://uploads.divjoy.com/undraw-directions_x53j.svg"
+                  "our team procures saplings via local nurseries and gardeners",
+                image: features2,
               },
               {
-                title: "Lorem Ipsum",
+                title: "we plant here",
                 body:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, metus et mattis ullamcorper",
-                image:
-                  "https://uploads.divjoy.com/undraw-stability_ball_b4ia.svg"
+                  "residential areas, schools, colleges, barren lands are a few places we aim to make greener (among a myriad of others, of course)",
+                image: features3,
               },
               {
-                title: "Lorem Ipsum",
+                title: "team work is dream work",
                 body:
-                  "Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo",
-                image:
-                  "https://uploads.divjoy.com/undraw-personal_settings_kihd.svg"
-              }
+                  "we believe in our cadre of young ambassadors from who help us connect with like-minded people and are determined to bring about a change",
+                image: features4,
+              },
             ]}
           />
         </div>

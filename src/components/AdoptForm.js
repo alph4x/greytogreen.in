@@ -21,6 +21,14 @@ export default class AdoptForm extends React.Component {
     await this.setState({ phone: e.target.value });
   }
 
+  async giftCheck(e) {
+    if (e.target.checked) {
+      document.getElementById("giftForm").className = "toggleShow";
+    } else {
+      document.getElementById("giftForm").className = "toggleHide";
+    }
+  }
+
   async onSubmitHandler(e) {
     e.preventDefault();
     //send form details
@@ -66,25 +74,31 @@ export default class AdoptForm extends React.Component {
           </Container>
         </Jumbotron>
         <div className="payment-form">
-          <Card style={{ width: "18rem", textAlign: "center" }}>
+          <Card
+            style={{
+              width: "25rem",
+              textAlign: "center",
+            }}
+            className="is-century"
+          >
             <Card.Title id="card-title" style={{ textAlign: "center" }}>
-              Title
+              Details
             </Card.Title>
             <Form className="form" onSubmit={this.onSubmitHandler.bind(this)}>
               <Form.Group>
                 <Form.Control
                   type="name"
-                  placeholder="Your name"
+                  placeholder="Display name"
                   onChange={this.getName.bind(this)}
                 />
-                <Form.Text className="text-muted">
+                <Form.Text className="text-muted" style={{ textAlign: "left" }}>
                   We'll use this name to showcase your association with us
                 </Form.Text>
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Control
                   type="email"
-                  placeholder="Your email"
+                  placeholder="Email"
                   onChange={this.getEmail.bind(this)}
                 />
               </Form.Group>
@@ -92,10 +106,30 @@ export default class AdoptForm extends React.Component {
               <Form.Group>
                 <Form.Control
                   type="number"
-                  placeholder="Your phone number"
+                  placeholder="Phone number"
                   onChange={this.getPhone.bind(this)}
                 />
               </Form.Group>
+              <Form.Group>
+                <Form.Control
+                  as="textarea"
+                  rows="3"
+                  placeholder=" My #greytogreen message is.."
+                />
+                <Form.Text className="text-muted" style={{ textAlign: "left" }}>
+                  optional; for display on website
+                </Form.Text>
+              </Form.Group>
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check
+                  type="checkbox"
+                  label="This is a gift"
+                  style={{ textAlign: "left" }}
+                  onChange={this.giftCheck.bind(this)}
+                />
+              </Form.Group>
+              <div id="giftForm" className="toggleHide"></div>
+
               <Button
                 variant="primary"
                 type="submit"

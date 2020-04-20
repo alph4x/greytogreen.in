@@ -11,6 +11,7 @@
     "plant trees"
   ],
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "bulma": "0.7.5",

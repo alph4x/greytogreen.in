@@ -18,7 +18,7 @@ function CtaSection(props) {
           <div className="column is-narrow">
             <SectionButton
               parentColor={props.color}
-              size="medium"
+              size="large"
               onClick={props.buttonOnClick}
             >
               {props.buttonText}

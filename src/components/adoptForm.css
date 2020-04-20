@@ -3,6 +3,10 @@
 
 .sec2 {
   text-align: center;
+  /* background: url("https://f0.pngfuel.com/png/563/746/green-field-illustration-png-clip-art.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100;
 }
 
 .payment-form {

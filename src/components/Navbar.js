@@ -8,25 +8,25 @@ function Navbar(props) {
   return (
     <NavbarContainer spaced={props.spaced} color={props.color}>
       <div className="container">
-        <div className="navbar-brand">
+        <div className="navbar-brand" style={{}}>
           <div className="navbar-item">
             <Link to="/">
               <img
                 className="image"
                 src={props.logo}
                 alt="Logo"
-                style={{ maxHeight: "4rem" }}
+                style={{ maxHeight: "3rem" }}
               />
             </Link>
           </div>
-          {/* <div
+          <div
             className={"navbar-burger burger" + (menuOpen ? " is-active" : "")}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span />
             <span />
             <span />
-          </div> */}
+          </div>
         </div>
         <div className={"navbar-menu" + (menuOpen ? " is-active" : "")}></div>
       </div>

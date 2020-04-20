@@ -44,13 +44,13 @@ function IndexPage(props) {
         subtitle=""
       />
       <CtaSection
-        color="primary"
+        color="lightergreen"
         size="medium"
-        title="Ready to get started?"
+        title="Ready to make an impact?"
         subtitle=""
-        buttonText="Get Started"
+        buttonText="Adopt now"
         buttonOnClick={() => {
-          router.push("/pricing");
+          router.push("/adopt");
         }}
       />
     </>

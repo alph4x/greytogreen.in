@@ -195,7 +195,7 @@ export default class adoptComponent extends React.Component {
       <div className="main-container">
         <div className="sec1">
           <h1 id="trees_title" className="title is-1 is-century center">
-            How many trees do you want to adopt?
+            How many trees do you want to adopt/gift?
           </h1>
 
           {/* COUNTER */}

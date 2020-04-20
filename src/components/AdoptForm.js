@@ -6,7 +6,7 @@ import { Jumbotron, Container, Card, Form, Button } from "react-bootstrap";
 export default class AdoptForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { gift: false };
   }
 
   async getName(e) {
@@ -21,12 +21,29 @@ export default class AdoptForm extends React.Component {
     await this.setState({ phone: e.target.value });
   }
 
+  async getFormMessage(e) {
+    await this.setState({ message: e.target.value });
+  }
+
   async giftCheck(e) {
     if (e.target.checked) {
       document.getElementById("giftForm").className = "toggleShow";
+      await this.setState({ gift: true });
     } else {
       document.getElementById("giftForm").className = "toggleHide";
     }
+  }
+
+  async getGiftTo(e) {
+    await this.setState({ giftTo: e.target.value });
+  }
+
+  async getGiftFrom(e) {
+    await this.setState({ giftFrom: e.target.value });
+  }
+
+  async getGiftMessage(e) {
+    await this.setState({ giftMessage: e.target.value });
   }
 
   async onSubmitHandler(e) {
@@ -36,6 +53,11 @@ export default class AdoptForm extends React.Component {
       name: this.state.name,
       email: this.state.email,
       phone: this.state.phone,
+      message: this.state.message,
+      gift: this.state.gift,
+      giftTo: this.state.giftTo,
+      giftFrom: this.state.giftFrom,
+      giftMessage: this.state.giftMessage,
     };
     await this.props.getFormDetails(formData);
     //call server & razorpay function
@@ -85,6 +107,7 @@ export default class AdoptForm extends React.Component {
               Details
             </Card.Title>
             <Form className="form" onSubmit={this.onSubmitHandler.bind(this)}>
+              {/* Display name */}
               <Form.Group>
                 <Form.Control
                   type="name"
@@ -95,6 +118,7 @@ export default class AdoptForm extends React.Component {
                   We'll use this name to showcase your association with us
                 </Form.Text>
               </Form.Group>
+              {/* Email */}
               <Form.Group controlId="formBasicEmail">
                 <Form.Control
                   type="email"
@@ -102,7 +126,7 @@ export default class AdoptForm extends React.Component {
                   onChange={this.getEmail.bind(this)}
                 />
               </Form.Group>
-
+              {/* Phone */}
               <Form.Group>
                 <Form.Control
                   type="number"
@@ -110,32 +134,83 @@ export default class AdoptForm extends React.Component {
                   onChange={this.getPhone.bind(this)}
                 />
               </Form.Group>
+              {/* Message */}
               <Form.Group>
                 <Form.Control
                   as="textarea"
                   rows="3"
                   placeholder=" My #greytogreen message is.."
+                  onChange={this.getFormMessage.bind(this)}
                 />
                 <Form.Text className="text-muted" style={{ textAlign: "left" }}>
                   optional; for display on website
                 </Form.Text>
               </Form.Group>
+              {/* Gift checkbox */}
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
-                  label="This is a gift"
+                  label="My donation is a gift for someone"
                   style={{ textAlign: "left" }}
                   onChange={this.giftCheck.bind(this)}
                 />
+                <Form.Text className="text-muted" style={{ textAlign: "left" }}>
+                  We’ll send a certificate to your email address, which you can
+                  forward along or print. (Here's an example)
+                </Form.Text>
               </Form.Group>
-              <div id="giftForm" className="toggleHide"></div>
+              {/* Gift div */}
+              <div id="giftForm" className="toggleHide">
+                {/* TO */}
+                <Form.Group>
+                  <Form.Label style={{ display: "block", textAlign: "left" }}>
+                    To
+                  </Form.Label>
+
+                  <Form.Control
+                    type="name"
+                    placeholder="Recipient Name or Nickname"
+                    onChange={this.getGiftTo.bind(this)}
+                  />
+                </Form.Group>
+                {/* FROM */}
+                <Form.Group>
+                  <Form.Label style={{ display: "block", textAlign: "left" }}>
+                    From
+                  </Form.Label>
+                  <Form.Control
+                    type="name"
+                    placeholder="Your Name or Nickname"
+                    onChange={this.getGiftFrom.bind(this)}
+                  />
+                </Form.Group>
+                {/* INCLUDE A GIFT MESSAGE */}
+                <Form.Group>
+                  <Form.Label style={{ display: "block", textAlign: "left" }}>
+                    Include a gift message
+                  </Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows="2"
+                    placeholder=" My #greytogreen gift message is.."
+                    onChange={this.getGiftMessage.bind(this)}
+                  />
+                  <Form.Text
+                    className="text-muted"
+                    style={{ textAlign: "left" }}
+                  >
+                    optional; to be included on the certificate
+                  </Form.Text>
+                </Form.Group>
+              </div>
 
               <Button
                 variant="primary"
                 type="submit"
-                // onClick={}
+                onClick={this.onSubmitHandler.bind(this)}
+                // onClick={console.log(this.state.gift)}
               >
-                Pay now
+                Complete adoption
               </Button>
             </Form>
           </Card>

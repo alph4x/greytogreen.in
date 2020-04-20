@@ -91,18 +91,26 @@ export default class adoptComponent extends React.Component {
       description: "Planting for a greener future",
       image: logo,
       order_id: this.state.order_id,
-      handler: function (response) {
+      handler: async function (response) {
         //captures frontend details & response details
         let objToSend = {
           ...response,
           name: this.state.name,
           email: this.state.email,
           phone: this.state.phone,
+          message: this.state.message,
+          gift: this.state.gift,
+          giftTo: this.state.giftTo,
+          giftFrom: this.state.giftFrom,
+          giftMessage: this.state.giftMessage,
           totalPrice: this.state.totalPrice,
           amount: this.state.numTrees,
         };
         //send all details to server
-        axios.post("http://localhost:4500/getDetails/razorpay", objToSend);
+        await axios.post(
+          "http://localhost:4500/getDetails/razorpay",
+          objToSend
+        );
       },
       external: {
         wallets: ["paytm"],
@@ -110,6 +118,11 @@ export default class adoptComponent extends React.Component {
           let id;
           let objToSend = {
             ...data,
+            message: this.state.message,
+            gift: this.state.gift,
+            giftTo: this.state.giftTo,
+            giftFrom: this.state.giftFrom,
+            giftMessage: this.state.giftMessage,
             //razorpay sends amount in paise, instead of rs (/100)
             amount: data.amount / 100,
             trees: this.state.numTrees,
@@ -186,6 +199,11 @@ export default class adoptComponent extends React.Component {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
+      message: formData.message,
+      gift: formData.gift,
+      giftTo: formData.giftTo,
+      giftFrom: formData.giftFrom,
+      giftMessage: formData.giftMessage,
     });
     console.log(this.state);
   }

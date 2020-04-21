@@ -20,22 +20,22 @@ function TestimonialsSection(props) {
               name: "Sarah Kline",
               quote:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-              company: "Company"
+              company: "Company",
             },
             {
               avatar: "https://uploads.divjoy.com/pravatar-150x-48.jpeg",
               name: "Shawna Murray",
               quote:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam!",
-              company: "Company"
+              company: "Company",
             },
             {
               avatar: "https://uploads.divjoy.com/pravatar-150x-12.jpeg",
               name: "Blake Elder",
               quote:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae.",
-              company: "Company"
-            }
+              company: "Company",
+            },
           ]}
         />
       </div>

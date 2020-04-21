@@ -9,13 +9,13 @@ function FaqPage(props) {
   return (
     <>
       <FaqSection
-        color="white"
+        color="light"
         size="medium"
         title="Frequently Asked Questions"
         subtitle=""
       />
       <CtaSection
-        color="primary"
+        color="lightergreen"
         size="medium"
         title="Ready to get started?"
         subtitle=""

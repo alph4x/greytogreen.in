@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSection from "./../components/HeroSection";
 import FeaturesSection from "./../components/FeaturesSection";
+import FactsLeaderboard from "./../components/FactsLeaderboard";
 import ClientsSection from "./../components/ClientsSection";
 import TestimonialsSection from "./../components/TestimonialsSection";
 import CtaSection from "./../components/CtaSection";
@@ -13,7 +14,7 @@ function IndexPage(props) {
     <>
       <HeroSection
         color="lightergreen"
-        size="large"
+        size="medium"
         title=""
         greyTitle="grey"
         lightgreenTitle="to"
@@ -31,18 +32,19 @@ function IndexPage(props) {
         title="in a nutshell"
         subtitle="here's an overall view of the functions we perform and the services we offer"
       />
-      <ClientsSection
+      <FactsLeaderboard />
+      {/* <ClientsSection
         color="light"
         size="medium"
         title="You're in good company"
         subtitle=""
-      />
-      <TestimonialsSection
+      /> */}
+      {/* <TestimonialsSection
         color="white"
         size="medium"
         title="Here's what people are saying"
         subtitle=""
-      />
+      /> */}
       <CtaSection
         color="lightergreen"
         size="medium"

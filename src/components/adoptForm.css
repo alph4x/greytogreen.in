@@ -25,6 +25,7 @@
 
 #card-title {
   padding: 10px 0px;
+  font-weight: 700;
 }
 
 .jumbotron {
@@ -268,5 +269,15 @@
   100% {
     -webkit-transform: translate3d(-400px, 680px, 0) rotate(0deg);
     opacity: 0;
+  }
+}
+
+.formCard {
+  width: 24vw;
+}
+
+@media (max-width: 400px) {
+  .formCard {
+    width: 65vw;
   }
 }

@@ -3,7 +3,7 @@ import "./Features.scss";
 
 function Features(props) {
   return (
-    <div className="Features columns is-multiline is-centered is-gapless">
+    <div className="Features columns is-multiline is-centered center is-gapless">
       {props.items.map((item, index) => (
         <div
           className={

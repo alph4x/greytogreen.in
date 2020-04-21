@@ -63,3 +63,14 @@
 .toggleHide {
   display: none;
 }
+
+.navbar-brand {
+  display: flex !important;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.navbar-burger {
+  margin-top: 1vh;
+}

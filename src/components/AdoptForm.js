@@ -98,10 +98,9 @@ export default class AdoptForm extends React.Component {
         <div className="payment-form">
           <Card
             style={{
-              width: "25rem",
               textAlign: "center",
             }}
-            className="is-century"
+            className="is-century formCard"
           >
             <Card.Title id="card-title" style={{ textAlign: "center" }}>
               Details
@@ -203,15 +202,13 @@ export default class AdoptForm extends React.Component {
                   </Form.Text>
                 </Form.Group>
               </div>
-
-              <Button
-                variant="primary"
-                type="submit"
+              <span
+                className="adopt-btn center"
                 onClick={this.onSubmitHandler.bind(this)}
-                // onClick={console.log(this.state.gift)}
+                style={{ fontSize: "20px" }}
               >
-                Complete adoption
-              </Button>
+                COMPLETE ADOPTION
+              </span>
             </Form>
           </Card>
         </div>

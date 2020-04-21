@@ -12,6 +12,7 @@ import Footer from "./../components/Footer";
 // import logoWhite from "../assets/fonts/";
 import logo from "../assets/images/LOGO-2.png";
 import "../assets/app.css";
+import DIY from "../components/DIY";
 
 function App(props) {
   return (
@@ -21,6 +22,8 @@ function App(props) {
 
         <Switch>
           <Route exact path="/" component={IndexPage} />
+
+          <Route exact path="/DIY" component={DIY} />
 
           <Route exact path="/adopt" component={adoptPage} />
 

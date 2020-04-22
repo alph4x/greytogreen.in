@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
-import YouTube from "react-youtube";
 import Features from "./Features";
 import features1 from "../assets/images/features-1.jpeg";
 import features2 from "../assets/images/features-2.jpeg";

@@ -107,10 +107,11 @@ export default class adoptComponent extends React.Component {
           amount: this.state.numTrees,
         };
         //send all details to server
-        await axios.post(
-          "http://localhost:4500/getDetails/razorpay",
-          objToSend
-        );
+        await axios
+          .post("http://localhost:4500/getDetails/razorpay", objToSend)
+          .then((res) => {
+            console.log(res);
+          });
       },
       external: {
         wallets: ["paytm"],

@@ -14,14 +14,10 @@ export default class FactsLeaderboard extends React.Component {
       <Section id="factsLeaderboardSection" color="light" size="large">
         <div className="container">
           <div className=" columns is-centered is-variable is-4 is-multiline">
-            <div
-              id="facts"
-              style={{ margin: 45 % 0 }}
-              className="column is-vcentered"
-            >
+            <div id="facts" className="column is-vcentered">
               <Facts />
             </div>
-            <div id="leaderboard" className="column">
+            <div id="leaderboard" className="column" style={{ margin: "auto" }}>
               <Leaderboard />
             </div>
           </div>

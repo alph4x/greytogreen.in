@@ -1,6 +1,7 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import axios from "axios";
 import "./Leaderboard.scss";
+import { Spinner, Tabs, Tab } from "react-bootstrap";
 
 const Person = (props) => (
   <div className="list__person">
@@ -44,21 +45,17 @@ const Header = () => (
 );
 
 class LoadingIndicator extends React.Component {
-  componentDidMount() {
-    const options = {
-      lines: 10,
-      color: "#4b7bec",
-      fadeColor: "#45aaf2",
-    };
-    // const spinner = new window.Spinner(options).spin(this.indicator);
-  }
-
   render() {
     return (
-      <div
-        className="loading-indicator"
-        ref={(ctx) => (this.indicator = ctx)}
-      />
+      <div className="loading-indicator" ref={(ctx) => (this.indicator = ctx)}>
+        <Spinner
+          style={{ display: "block", margin: "auto" }}
+          animation="border"
+          role="status"
+        >
+          <span className="sr-only">Loading...</span>
+        </Spinner>{" "}
+      </div>
     );
   }
 }
@@ -84,22 +81,22 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Helmet>
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js" />
-        </Helmet>
         <Header />
-        <div className="tabs columns">
-          <ul>
-            <li className="is-active column">
-              <a style={{ width: "auto" }}>Most Recent</a>
-            </li>
-            <li className="column">
-              <a style={{ width: "auto" }}>Most donations</a>
-            </li>
-          </ul>
-        </div>
+
         {this.state.loading && <LoadingIndicator />}
-        <List list={this.state.list} />
+        <Tabs
+          defaultActiveKey="profile"
+          id="uncontrolled-tab-example"
+          className="is-century "
+        >
+          <Tab eventKey="recent" title="Most recent">
+            {/* <Sonnet /> */}
+            <List list={this.state.list} />
+          </Tab>
+          <Tab eventKey="most" title="Most trees">
+            <List list={this.state.list} />
+          </Tab>
+        </Tabs>
       </div>
     );
   }

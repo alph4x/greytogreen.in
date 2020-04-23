@@ -9,6 +9,7 @@ import adoptPage from "./adoptPage";
 import { Switch, Route, Router } from "./../util/router.js";
 import Divider from "./../components/Divider";
 import Footer from "./../components/Footer";
+import TrackPage from "./track.js";
 // import logoWhite from "../assets/fonts/";
 import logo from "../assets/images/LOGO-2.png";
 import "../assets/app.css";
@@ -24,6 +25,8 @@ function App(props) {
           <Route exact path="/" component={IndexPage} />
 
           <Route exact path="/DIY" component={DIY} />
+
+          <Route exact path="/track" component={TrackPage} />
 
           <Route exact path="/adopt" component={adoptPage} />
 

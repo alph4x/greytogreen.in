@@ -213,7 +213,11 @@ export default class adoptComponent extends React.Component {
     return (
       <div className="main-container">
         <div className="sec1">
-          <h1 id="trees_title" className="title is-1 is-century center">
+          <h1
+            id="trees_title"
+            style={{ fontSize: "36px" }}
+            className="title is-1 is-caslon center"
+          >
             How many trees do you want to adopt/gift?
           </h1>
 

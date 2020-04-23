@@ -36,7 +36,12 @@ export default class Facts extends React.Component {
   render() {
     return (
       <div className="is-vcentered" style={{ margin: "45% 0" }}>
-        <SectionHeader centered={true} title="Did you know..?" size="large" />
+        <SectionHeader
+          centered={true}
+          className="is-caslon"
+          title="did you know?"
+          size="large"
+        />
         <p
           id="factText"
           className="is-century"

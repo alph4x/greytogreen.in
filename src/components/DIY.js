@@ -2,10 +2,10 @@ import React from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Features from "./Features";
-import features1 from "../assets/images/features-1.jpeg";
-import features2 from "../assets/images/features-2.jpeg";
-import features3 from "../assets/images/features-3.jpeg";
-import features4 from "../assets/images/features-4.jpeg";
+import dig from "../assets/images/dig.png";
+import place from "../assets/images/place.png";
+import fill from "../assets/images/fill.png";
+import mulch from "../assets/images/mulch.png";
 import "./DIY.css";
 
 export default function DIY(props) {
@@ -31,28 +31,28 @@ export default function DIY(props) {
             columns={2}
             items={[
               {
-                title: "adopt with just a click",
+                title: "DIG",
                 body:
-                  "we provde a user-friendly platform through which adopting & planting saplingssud is only a click of buttons away!",
-                image: features1,
+                  "Dig a shallow broad pit and place the sapling inside it.",
+                image: dig,
               },
               {
-                title: "we support local businesses",
+                title: "PLACE",
                 body:
-                  "our team procures saplings via local nurseries and gardeners",
-                image: features2,
+                  "Place the plant at the proper height otherwise the roots may have difficulty developing due to lack of oxygen.",
+                image: place,
               },
               {
-                title: "we plant here",
+                title: "FILL",
                 body:
-                  "residential areas, schools, colleges, barren lands are a few places we aim to make greener (among a myriad of others, of course)",
-                image: features3,
+                  "Backfill the pit and make sure that the planted tree/sapling is straight.",
+                image: fill,
               },
               {
-                title: "team work is dream work",
+                title: "MULCH",
                 body:
-                  "we believe in our cadre of young ambassadors from who help us connect with like-minded people and are determined to bring about a change",
-                image: features4,
+                  "Mulch is an organic matter (decaying leaves, bark or compost) spread around the base of a tree to hold moisture, reduce the growth of grass and weed.",
+                image: mulch,
               },
             ]}
           />
@@ -65,6 +65,7 @@ export default function DIY(props) {
             Here's a video to help you plant:
           </p>
           <iframe
+            title="video"
             id="ytplayer"
             type="text/html"
             width="640"
@@ -75,12 +76,19 @@ export default function DIY(props) {
         </div>
         <div className="columns" style={{ marginTop: "4rem" }}>
           <div className="column ">
-            <span className="center customBtn  ">
-              Which trees to be planted
+            <span className="center customBtn " style={{ top: "25%" }}>
+              Which plants to plant?
             </span>
           </div>
           <div className="column">
-            <span className="center customBtn">Find the nearest nursery</span>
+            <span className="center customBtn">
+              <a
+                style={{ textDecoration: "none", color: "inherit" }}
+                href="https://www.google.com/maps/search/?api=1&query=plant+nursery"
+              >
+                Take me to the nearest nursery
+              </a>
+            </span>
           </div>
         </div>
       </div>

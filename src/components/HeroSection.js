@@ -57,7 +57,7 @@ export default class HeroSection extends React.Component {
           </div>
           <div
             className="DIY is-century"
-            style={{ textAlign: "center", marginTop: "-25px" }}
+            style={{ textAlign: "center", marginTop: "-20px" }}
           >
             <span
               style={{

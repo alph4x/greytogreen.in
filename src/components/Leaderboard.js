@@ -6,11 +6,11 @@ import { Spinner, Tabs, Tab } from "react-bootstrap";
 const Person = (props) => (
   <div className="list__person">
     <img className="person__image" src={props.personImg} />
-    <p className="person__name">{props.personName}</p>
-    <p className="person__networth">
-      {props.personNetworth}
-      <span>B</span>
-    </p>
+    <div>
+      <p className="person__name">{props.personName}</p>
+      <p className="personMessage">This is a dummy message</p>
+    </div>
+    <p className="person__networth">{props.personNetworth}</p>
   </div>
 );
 
@@ -85,7 +85,7 @@ class App extends React.Component {
 
         {this.state.loading && <LoadingIndicator />}
         <Tabs
-          defaultActiveKey="profile"
+          defaultActiveKey="recent"
           id="uncontrolled-tab-example"
           className="is-century "
         >

@@ -14,6 +14,7 @@ import TrackPage from "./track.js";
 import logo from "../assets/images/LOGO-2.png";
 import "../assets/app.css";
 import DIY from "../components/DIY";
+import SecretAccess from "./SecretAccess";
 
 function App(props) {
   return (
@@ -27,6 +28,8 @@ function App(props) {
           <Route exact path="/DIY" component={DIY} />
 
           <Route exact path="/track" component={TrackPage} />
+
+          <Route exact path="/secretaccess" component={SecretAccess} />
 
           <Route exact path="/adopt" component={adoptPage} />
 

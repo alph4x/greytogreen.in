@@ -51,35 +51,52 @@
 
     &__person {
       display: flex;
-      min-height: 80px;
+      // min-height: 80px;
       align-items: center;
       padding: 10px 15px;
-      margin: 10px 15px;
+      margin: 0.5vh 1vw;
       border-radius: 4px;
       box-shadow: 0px 2px 18px 7px rgba(189, 189, 189, 0.21);
       transition: all 0.25s linear;
-      cursor: pointer;
+      cursor: default;
       animation: fadeIn 0.5s 0.1s both;
+      justify-content: space-around;
+
+      p {
+        margin-bottom: 0rem;
+      }
 
       .person__image {
         position: relative;
-        max-width: 77px;
+        max-width: 60px;
         height: auto;
-        margin-right: 22px;
         border: 10px solid #f5f6fa;
         border-radius: 50%;
       }
 
+      .timeDate {
+        display: block;
+        font-size: 0.7rem;
+        text-align: center;
+      }
+
+      .person__text {
+        margin-right: 3vw;
+        text-align: center;
+      }
+
       .person__name {
+        text-align: center;
         font-size: 18px;
+        font-weight: 600;
         color: #000000;
       }
 
       .person__networth {
-        margin-left: auto;
-        font-size: 26px;
+        // margin-left: auto;
+        font-size: 2rem;
         // font-weight: 700;
-        color: #4cd5af;
+        // color: #4cd5af;
 
         span {
           font-size: 15px;
@@ -136,7 +153,7 @@
       }
 
       .person__networth {
-        font-size: 18px;
+        font-size: 2rem;
       }
     }
   }

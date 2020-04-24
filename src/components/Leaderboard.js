@@ -5,12 +5,16 @@ import { Spinner, Tabs, Tab } from "react-bootstrap";
 
 const Person = (props) => (
   <div className="list__person">
-    <img className="person__image" src={props.personImg} />
-    <div>
-      <p className="person__name">{props.personName}</p>
-      <p className="personMessage">This is a dummy message</p>
+    <div style={{ marginRight: "2vw" }}>
+      <img className="person__image" src={props.personImg} alt="user icon" />
+      <span className="timeDate">21/01/20</span>
+      <span className="timeDate">16:42:49</span>
     </div>
-    <p className="person__networth">{props.personNetworth}</p>
+    <div className="person__text">
+      <p className="person__name">User Name</p>
+      <p className="personMessage">This is gonna be the user message</p>
+    </div>
+    <p className="person__networth lightgreen-font">32</p>
   </div>
 );
 
@@ -34,11 +38,12 @@ const List = (props) => (
 const Header = () => (
   <div className="header">
     <img
+      alt="header logo"
       className="header__icon"
       src="https://user-images.githubusercontent.com/23297041/55285200-a24e9b00-538f-11e9-8990-d49a162824d1.png"
     />
     <h1 className="header__title">
-      TreeVR
+      Impact
       <span>Leaderboard</span>
     </h1>
   </div>
@@ -80,7 +85,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="app is-century">
         <Header />
 
         {this.state.loading && <LoadingIndicator />}
@@ -90,7 +95,6 @@ class App extends React.Component {
           className="is-century "
         >
           <Tab eventKey="recent" title="Most recent">
-            {/* <Sonnet /> */}
             <List list={this.state.list} />
           </Tab>
           <Tab eventKey="most" title="Most trees">

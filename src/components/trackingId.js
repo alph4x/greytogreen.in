@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import "./trackingId.css";
 
 export default class TrackingId extends React.Component {
   constructor(props) {
@@ -24,7 +25,8 @@ export default class TrackingId extends React.Component {
     }
   }
 
-  async btnHandler() {
+  async btnHandler(e) {
+    e.preventDefault();
     const trackingId = document.getElementById("trackingId").value;
     await this.setState({ trackingId: trackingId });
     this.checkViewChange();
@@ -32,11 +34,37 @@ export default class TrackingId extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div id="trackingContainer">
+        {/* <div>
           <span>Enter Tracking ID:</span>
           <input id="trackingId"></input>
           <button onClick={this.btnHandler.bind(this)}>Submit</button>
+        </div> */}
+        <div className="form">
+          <form style={{ width: "100%" }}>
+            <div className="input-group">
+              <input
+                class="input-group__input"
+                id="email"
+                type="text"
+                placeholder=" "
+                autocomplete="off"
+              />
+              <label class="input-group__label" for="email" id="trackingId">
+                TRACKING ID
+              </label>
+            </div>
+
+            <center>
+              <span
+                variant="primary"
+                className="submitBtn"
+                onClick={this.btnHandler.bind(this)}
+              >
+                Submit
+              </span>
+            </center>
+          </form>
         </div>
       </div>
     );

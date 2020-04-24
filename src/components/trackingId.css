@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.submitBtn {
+  background: #1d392a;
+  font-family: "Caslon CP", sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  position: relative;
+  top: 1vh;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+#trackingContainer {
+  margin: 0;
+  height: calc(100vh - 90px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf0f1;
+}
+
+.form {
+  width: 90vw;
+  height: 250px;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  border-radius: 21px;
+  box-shadow: 3px 3px 10px #777;
+}
+
+@media screen and (min-width: 992px) {
+  .form {
+    width: 40vw;
+  }
+}
+
+.input-group {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-bottom: 5vh;
+}
+.input-group__input {
+  display: block;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background-color: transparent;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: #666;
+  padding: 8px 4px;
+  outline: none;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 2px solid #666;
+  /* Floating animation */
+}
+.input-group__input:valid ~ .input-group__label {
+  color: #27ae60;
+}
+.input-group__input:invalid ~ .input-group__label {
+  color: #e74c3c;
+}
+.input-group__input:placeholder-shown ~ .input-group__label {
+  color: #666;
+}
+.input-group__input:focus ~ .input-group__label,
+.input-group__input:not(:placeholder-shown) ~ .input-group__label {
+  transform: translateX(-8px) translateY(-28px) scale(0.8);
+}
+.input-group__label {
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  cursor: text;
+  transition: all 0.3s ease;
+}

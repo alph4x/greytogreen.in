@@ -21,7 +21,7 @@ export default class Track extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         {this.state.view === 1 ? (
           <TrackingId viewChange={this.viewChange.bind(this)} />
         ) : (

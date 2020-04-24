@@ -1,15 +1,11 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
 import Map from "google-map-react";
-import Axios from "axios";
+import marker from "../assets/images/LOGO-single.png";
 
 const AnyReactComponent = ({ text }) => (
   <div>
-    <img
-      style={{ height: "30px" }}
-      src="https://pngimg.com/uploads/tree/tree_PNG92780.png"
-      alt=""
-    ></img>
+    <img style={{ height: "30px" }} src={marker} alt=""></img>
   </div>
 );
 
@@ -32,7 +28,7 @@ export default class TrackInfo extends React.Component {
   render() {
     return (
       <div className="container">
-        <SectionHeader title="Track " />
+        <SectionHeader title="Track" centered />
         <div
           className="mapsContainer"
           style={{ height: "50vh", width: "100%" }}

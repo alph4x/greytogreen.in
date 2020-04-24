@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import "./trackingId.css";
+import Swal from "sweetalert2";
 
 export default class TrackingId extends React.Component {
   constructor(props) {
@@ -17,7 +18,13 @@ export default class TrackingId extends React.Component {
     }).then((res) => this.setState({ user: res.data[0] }));
 
     if (!this.state.user) {
-      alert("ERROR - Tracking ID not found");
+      Swal.fire({
+        confirmButtonColor: "#1d392a",
+        title: "Invalid tracking ID",
+        titleText: "Invalid tracking ID",
+        text: "Are you sure that is correct?",
+        icon: "question",
+      });
     } else if (this.state.trackingId === this.state.user.trackingId) {
       //checks if incoming trackindId matches component trackindId
       console.log("view change");
@@ -28,6 +35,7 @@ export default class TrackingId extends React.Component {
   async btnHandler(e) {
     e.preventDefault();
     const trackingId = document.getElementById("trackingId").value;
+    console.log(trackingId);
     await this.setState({ trackingId: trackingId });
     this.checkViewChange();
   }
@@ -35,22 +43,17 @@ export default class TrackingId extends React.Component {
   render() {
     return (
       <div id="trackingContainer">
-        {/* <div>
-          <span>Enter Tracking ID:</span>
-          <input id="trackingId"></input>
-          <button onClick={this.btnHandler.bind(this)}>Submit</button>
-        </div> */}
-        <div className="form">
+        <div className="trackingForm">
           <form style={{ width: "100%" }}>
             <div className="input-group">
               <input
                 class="input-group__input"
-                id="email"
+                id="trackingId"
                 type="text"
                 placeholder=" "
                 autocomplete="off"
               />
-              <label class="input-group__label" for="email" id="trackingId">
+              <label class="input-group__label" for="email">
                 TRACKING ID
               </label>
             </div>

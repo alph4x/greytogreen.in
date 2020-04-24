@@ -3,6 +3,7 @@ import "./adoptTrees.css";
 import logo from "../assets/images/LOGO-2.png";
 import AdoptForm from "./AdoptForm.js";
 import axios from "axios";
+import $ from "jquery";
 
 export default class adoptComponent extends React.Component {
   constructor(props) {
@@ -192,6 +193,9 @@ export default class adoptComponent extends React.Component {
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
     document.body.appendChild(script);
+
+    //sec2
+    document.getElementById("sec2").style.display = "none";
   }
 
   async getFormDetails(formData) {
@@ -209,10 +213,21 @@ export default class adoptComponent extends React.Component {
     console.log(this.state);
   }
 
+  btnHandler() {
+    document.getElementById("sec2").style.display = "block";
+    $("html, body").animate(
+      {
+        scrollTop: $("#sec2").offset().top,
+      },
+      1500
+    );
+    document.getElementById("leaves").style.display = "block";
+  }
+
   render() {
     return (
       <div className="main-container">
-        <div className="sec1">
+        <div id="sec1" className="sec1">
           <h1
             id="trees_title"
             style={{ fontSize: "36px" }}
@@ -262,7 +277,12 @@ export default class adoptComponent extends React.Component {
           </center>
           <br />
           <div className="center">
-            <span className="adopt-btn center">ADOPT NOW</span>
+            <span
+              className="adopt-btn center"
+              onClick={this.btnHandler.bind(this)}
+            >
+              ADOPT NOW
+            </span>
             <br />
             <br />
             <span className="redirect-subtxt center">

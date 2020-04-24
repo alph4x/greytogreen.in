@@ -28,7 +28,7 @@
   background-color: #ecf0f1;
 }
 
-.form {
+.trackingForm {
   width: 90vw;
   height: 250px;
   padding: 32px;
@@ -41,7 +41,7 @@
 }
 
 @media screen and (min-width: 992px) {
-  .form {
+  .trackingForm {
     width: 40vw;
   }
 }

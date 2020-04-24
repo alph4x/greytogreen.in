@@ -67,7 +67,7 @@ export default class AdoptForm extends React.Component {
 
   render() {
     return (
-      <div className="sec2">
+      <div id="sec2" className="sec2">
         <div id="leaves">
           <i></i>
           <i></i>

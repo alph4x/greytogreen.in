@@ -26,8 +26,9 @@ export default class Track extends React.Component {
           <TrackingId viewChange={this.viewChange.bind(this)} />
         ) : (
           <TrackInfo
-            lat={this.state.user.plantedLat}
-            lng={this.state.user.plantedLng}
+            //convert mongoose decimals to float datatype
+            lat={parseFloat(this.state.user.plantedLat.$numberDecimal)}
+            lng={parseFloat(this.state.user.plantedLng.$numberDecimal)}
           />
         )}
       </div>

@@ -74,3 +74,13 @@
 .navbar-burger {
   margin-top: 1vh;
 }
+
+.navbar-menu {
+  justify-content: flex-end;
+  /* background-color: transparent !important; */
+}
+
+.navlink {
+  margin: 0 1vw;
+  display: inline-block;
+}

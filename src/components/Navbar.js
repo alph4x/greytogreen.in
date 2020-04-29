@@ -28,7 +28,11 @@ function Navbar(props) {
             <span />
           </div>
         </div>
-        <div className={"navbar-menu" + (menuOpen ? " is-active" : "")}></div>
+        <div className={"navbar-menu" + (menuOpen ? " is-active" : "")}>
+          <span className="navlink">Contact Us</span>
+          <span className="navlink">FAQ</span>
+          <span className="navlink">Track Your Sapling</span>
+        </div>
       </div>
     </NavbarContainer>
   );

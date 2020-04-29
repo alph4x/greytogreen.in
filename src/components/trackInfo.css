@@ -1,0 +1,11 @@
+.trackingInfo {
+  opacity: 0.9;
+  z-index: 500;
+  position: relative;
+}
+
+.mapsContainer {
+  position: absolute;
+  height: 70vh;
+  width: 100%;
+}

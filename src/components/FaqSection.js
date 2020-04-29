@@ -16,30 +16,36 @@ function FaqSection(props) {
         <Faq
           items={[
             {
-              question: "Integer ornare neque mauris?",
+              question: "Who makes up the team?",
               answer:
-                "Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
+                "Whether you donate to adopt one tree or 100, plant a tree yourself or simply spread the word, anybody who is trying to save the earth is a part of our team.",
             },
             {
-              question: "Lorem ipsum dolor sit amet?",
+              question: "How is the money spent?",
               answer:
-                "Nunc nulla mauris, laoreet vel cursus lacinia, consectetur sit amet tellus. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
+                "For every tree adopted, 2/3 of the amount goes toward the procurement of the sapling from local indigenous nurseries and 1/3 goes towards the plantation and maintenance of the sapling.",
             },
             {
-              question: "Suspendisse ut tincidunt?",
+              question: "How do we know where & if the trees are planted?",
               answer:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, metus et mattis ullamcorper. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
+                "With every donation the donator gets a certificate on which a unique code is mentioned. This code can then be used on our website to track the exact location where the saplings were planted.",
             },
             {
-              question: "Ut enim ad minim veniam?",
+              question: "How are the trees/saplings planted?",
               answer:
-                "Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
+                "The trees are planted with the help of a team of dedicated ambassadors.",
+              link: "Become an ambassador!",
             },
             {
-              question: "In velit mi, rhoncus dictum neque?",
+              question: "Which trees do you plant?",
               answer:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
-            }
+                "Trees like jamun, arjun, peepal , neem and many more are planted.",
+            },
+            {
+              question: "How can I get involved?",
+              // answer: "Become an ambassador!",
+              link: "Become an ambassador!",
+            },
           ]}
         />
       </div>

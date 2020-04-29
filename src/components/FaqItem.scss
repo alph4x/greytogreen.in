@@ -1,5 +1,4 @@
 .FaqItem {
-  cursor: pointer;
   padding: 1.6rem 0;
   border-bottom: 1px solid #efefef;
   &:last-child {
@@ -9,4 +8,13 @@
   &__icon {
     margin-right: 1rem;
   }
+}
+
+#faqTitle {
+  cursor: pointer;
+}
+
+.faqLink {
+  cursor: pointer;
+  text-decoration: underline;
 }

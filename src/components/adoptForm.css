@@ -278,9 +278,15 @@
   width: 24vw;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   .formCard {
-    width: 65vw;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sec2 {
+    height: 120vh;
   }
 }
 

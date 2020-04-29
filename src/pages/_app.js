@@ -15,6 +15,7 @@ import logo from "../assets/images/LOGO-2.png";
 import "../assets/app.css";
 import DIY from "../components/DIY";
 import SecretAccess from "./SecretAccess";
+import Thankyou from "./thankyou";
 
 function App(props) {
   return (
@@ -26,6 +27,8 @@ function App(props) {
           <Route exact path="/" component={IndexPage} />
 
           <Route exact path="/DIY" component={DIY} />
+
+          <Route exact path="/thankyou" component={Thankyou} />
 
           <Route exact path="/track" component={TrackPage} />
 

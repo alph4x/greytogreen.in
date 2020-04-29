@@ -228,11 +228,7 @@ export default class adoptComponent extends React.Component {
     return (
       <div className="main-container">
         <div id="sec1" className="sec1">
-          <h1
-            id="trees_title"
-            style={{ fontSize: "36px" }}
-            className="title is-1 is-caslon center"
-          >
+          <h1 id="trees_title" className="title is-1 is-caslon center">
             How many trees do you want to adopt/gift?
           </h1>
 
@@ -278,6 +274,7 @@ export default class adoptComponent extends React.Component {
           <br />
           <div className="center">
             <span
+              id="adoptNowBtn"
               className="adopt-btn center"
               onClick={this.btnHandler.bind(this)}
             >
@@ -286,7 +283,7 @@ export default class adoptComponent extends React.Component {
             <br />
             <br />
             <span className="redirect-subtxt center">
-              You will be redirected to a payment portal
+              One step closer to making an impact
             </span>
           </div>
           <br />

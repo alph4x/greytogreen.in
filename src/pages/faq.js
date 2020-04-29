@@ -17,11 +17,11 @@ function FaqPage(props) {
       <CtaSection
         color="lightergreen"
         size="medium"
-        title="Ready to get started?"
+        title="Ready to make an impact?"
         subtitle=""
-        buttonText="Get Started"
+        buttonText="Adopt Now"
         buttonOnClick={() => {
-          router.push("/pricing");
+          router.push("/adopt");
         }}
       />
     </>

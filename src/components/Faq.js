@@ -5,7 +5,12 @@ function Faq(props) {
   return (
     <>
       {props.items.map((item, index) => (
-        <FaqItem question={item.question} answer={item.answer} key={index} />
+        <FaqItem
+          link={item.link}
+          question={item.question}
+          answer={item.answer}
+          key={index}
+        />
       ))}
     </>
   );

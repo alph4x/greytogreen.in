@@ -28,9 +28,11 @@ export default class AdoptForm extends React.Component {
   async giftCheck(e) {
     if (e.target.checked) {
       document.getElementById("giftForm").className = "toggleShow";
+      document.getElementById("sec2").style.height = "150vh";
       await this.setState({ gift: true });
     } else {
       document.getElementById("giftForm").className = "toggleHide";
+      document.getElementById("sec2").style.height = "100vh";
     }
   }
 

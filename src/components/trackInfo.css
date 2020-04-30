@@ -1,11 +1,58 @@
-.trackingInfo {
-  opacity: 0.9;
+.trackingInfoContainer {
+  opacity: 0.95;
   z-index: 500;
   position: relative;
+}
+
+#cardContainer {
+  width: 20vw;
+}
+
+.card-col {
+  /* padding: 5px !important; */
 }
 
 .mapsContainer {
   position: absolute;
   height: 70vh;
   width: 100%;
+}
+
+#cardTitleImg {
+  display: block;
+  margin: 0 auto;
+  height: 13vh;
+  width: 13vh;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.cardBodyIllustration {
+  margin: auto;
+  height: 10vh;
+  width: 10vh;
+}
+
+#numTrees {
+  font-size: 1.7rem;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#saplingSpan {
+  display: block;
+  margin-top: -2vh;
+}
+
+#date {
+  display: block;
+  font-size: 1.7rem;
+}
+
+#time {
+  display: block;
+  margin-top: -2vh;
 }

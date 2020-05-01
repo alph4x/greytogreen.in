@@ -28,7 +28,7 @@ function App(props) {
 
           <Route exact path="/DIY" component={DIY} />
 
-          <Route exact path="/thankyou" component={Thankyou} />
+          <Route path="/thankyou" component={Thankyou} />
 
           <Route exact path="/track" component={TrackPage} />
 

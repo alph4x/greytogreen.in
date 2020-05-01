@@ -111,7 +111,8 @@ export default class adoptComponent extends React.Component {
         await axios
           .post("http://localhost:4500/getDetails/razorpay", objToSend)
           .then((res) => {
-            console.log(res);
+            //recieve success callback URL and redirect
+            window.location = res.data;
           });
       },
       external: {

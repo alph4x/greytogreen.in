@@ -83,4 +83,7 @@
 .navlink {
   margin: 0 1vw;
   display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
 }

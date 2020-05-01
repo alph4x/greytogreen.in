@@ -9,9 +9,11 @@ function Contact(props) {
     setStatus({ type: "pending" });
 
     contact.submit({ name, email, message }).then(() => {
+      // Axios.post('localhost:4500/contact')
+      console.log(name, email, message);
       setStatus({
         type: "success",
-        message: "Your message has been sent! We'll get back to you soon."
+        message: "Your message has been sent! We'll get back to you soon.",
       });
     });
   };

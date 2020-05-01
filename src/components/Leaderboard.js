@@ -2,19 +2,20 @@ import React from "react";
 import axios from "axios";
 import "./Leaderboard.scss";
 import { Spinner, Tabs, Tab } from "react-bootstrap";
+import Axios from "axios";
 
 const Person = (props) => (
   <div className="list__person">
     <div style={{ marginRight: "2vw" }}>
       <img className="person__image" src={props.personImg} alt="user icon" />
-      <span className="timeDate">21/01/20</span>
-      <span className="timeDate">16:42:49</span>
+      <span className="timeDate">{props.personDate}</span>
+      <span className="timeDate">{props.personTime}</span>
     </div>
     <div className="person__text">
-      <p className="person__name">User Name</p>
-      <p className="personMessage">This is gonna be the user message</p>
+      <p className="person__name">{props.personName}</p>
+      <p className="personMessage">{props.personMessage}</p>
     </div>
-    <p className="person__networth lightgreen-font">32</p>
+    <p className="person__networth lightgreen-font">{props.personTrees}</p>
   </div>
 );
 
@@ -28,8 +29,11 @@ const List = (props) => (
     {props.list.map((person) => (
       <Person
         personImg={person.squareImage}
+        personDate={new Date(person.date).toLocaleDateString()}
+        personTime={new Date(person.date).toLocaleTimeString()}
         personName={person.name}
-        personNetworth={person.worth / 1000}
+        personMessage={person.gift ? person.giftMessage : person.message}
+        personTrees={person.numTrees}
       />
     ))}
   </div>
@@ -67,21 +71,34 @@ class LoadingIndicator extends React.Component {
 
 class App extends React.Component {
   state = {
-    list: [],
+    recentList: [],
+    mostList: [],
     loading: true,
   };
 
-  componentDidMount() {
-    this.getForbesList();
+  componentWillMount() {
+    // this.getLeaderboard();
+    this.getLeaderboardRecent();
+    this.getLeaderboardMost();
   }
 
-  getForbesList = () => {
-    fetch("https://forbes400.herokuapp.com/api/forbes400")
-      .then((res) => res.json())
-      .then((list) => {
-        this.setState({ list, loading: false });
-      });
-  };
+  async getLeaderboardRecent() {
+    await Axios.get(
+      "http://localhost:4500/getUserDetails/leaderboard/recent"
+    ).then(async (res) => {
+      await this.setState({ recentList: res.data, loading: false });
+      console.log(this.state.recentList);
+    });
+  }
+
+  async getLeaderboardMost() {
+    await Axios.get(
+      "http://localhost:4500/getUserDetails/leaderboard/most"
+    ).then(async (res) => {
+      await this.setState({ mostList: res.data, loading: false });
+      console.log("most", this.state.mostList);
+    });
+  }
 
   render() {
     return (
@@ -95,10 +112,10 @@ class App extends React.Component {
           className="is-century "
         >
           <Tab eventKey="recent" title="Most recent">
-            <List list={this.state.list} />
+            <List list={this.state.recentList} />
           </Tab>
           <Tab eventKey="most" title="Most trees">
-            <List list={this.state.list} />
+            <List list={this.state.mostList} />
           </Tab>
         </Tabs>
       </div>

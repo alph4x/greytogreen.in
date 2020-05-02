@@ -19,6 +19,10 @@
   width: 300px;
 }
 
+.modal-content {
+  margin: 0px 0px !important;
+}
+
 @media screen and (min-width: 1200px) {
   #featuresSection {
     margin: -85px 0px;

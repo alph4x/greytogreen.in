@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import NavbarContainer from "./NavbarContainer";
 import { Link } from "./../util/router.js";
+import { useRouter } from "./../util/router.js";
 
 function Navbar(props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <NavbarContainer spaced={props.spaced} color={props.color}>
@@ -28,10 +30,34 @@ function Navbar(props) {
             <span />
           </div>
         </div>
-        <div className={"navbar-menu" + (menuOpen ? " is-active" : "")}>
-          <span className="navlink is-century">Contact Us</span>
-          <span className="navlink is-century">Track Your Sapling</span>
-          <span className="navlink is-century">FAQ</span>
+        <div
+          id="navlinksContainer"
+          className={"navbar-menu" + (menuOpen ? " is-active" : "")}
+        >
+          <span
+            className="navlink is-century"
+            onClick={() => router.push("/track")}
+          >
+            Track
+          </span>
+          <span
+            className="navlink is-century"
+            onClick={() => router.push("/diy")}
+          >
+            DIY
+          </span>
+          <span
+            className="navlink is-century"
+            onClick={() => router.push("/about")}
+          >
+            About
+          </span>
+          <span
+            className="navlink is-century"
+            onClick={() => router.push("/faq")}
+          >
+            FAQ
+          </span>
         </div>
       </div>
     </NavbarContainer>

@@ -12,6 +12,7 @@
 
 .payment-form {
   display: inline-block;
+  padding-top: 5vh;
   /* background-color: grey; */
 }
 
@@ -278,7 +279,7 @@
   width: 24vw;
 }
 
-@media (max-width: 420px) {
+/* @media (max-width: 420px) {
   .formCard {
     width: 90%;
     display: block;
@@ -287,6 +288,37 @@
 
   .sec2 {
     height: 120vh;
+  }
+} */
+
+/* IPAD */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .formCard {
+    width: 50vw;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  .sec2 {
+    /* height: 133vh; */
+  }
+  #treesTitle {
+    padding-top: 1rem;
+  }
+  .formCard {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sec2 {
+    height: 135vh;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .sec2 {
+    height: 70vh;
   }
 }
 

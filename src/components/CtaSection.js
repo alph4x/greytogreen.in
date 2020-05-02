@@ -26,8 +26,22 @@ function CtaSection(props) {
                 size="large"
                 onClick={props.buttonOnClick}
               >
-                {props.buttonText}
+                Adopt now!
               </SectionButton>
+              <div className="DIY is-century" style={{ textAlign: "center" }}>
+                <span
+                  style={{
+                    fontSize: "14px",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    window.location.href = "/diy";
+                  }}
+                >
+                  OR DO IT YOURSELF
+                </span>
+              </div>
             </div>
           </div>
         </div>

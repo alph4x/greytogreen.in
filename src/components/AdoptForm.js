@@ -2,6 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./adoptForm.css";
 import { Jumbotron, Container, Card, Form, Button } from "react-bootstrap";
+import Swal from "sweetalert2";
+import certificate from "../assets/images/certificate.png";
 
 export default class AdoptForm extends React.Component {
   constructor(props) {
@@ -157,7 +159,12 @@ export default class AdoptForm extends React.Component {
                 />
                 <Form.Text className="text-muted" style={{ textAlign: "left" }}>
                   We’ll send a certificate to your email address, which you can
-                  forward along or print. (Here's an example)
+                  forward along or print.
+                  <span
+                    style={{ textDecoration: "underline", cursor: "pointer" }}
+                  >
+                    (Here's an example)
+                  </span>
                 </Form.Text>
               </Form.Group>
               {/* Gift div */}

@@ -28,7 +28,7 @@ function FaqSection(props) {
             {
               question: "How do we know where & if the trees are planted?",
               answer:
-                "With every donation the donator gets a certificate on which a unique code is mentioned. This code can then be used on our website to track the exact location where the saplings were planted.",
+                "With every donation the donor gets a unique tracking ID associated with their batch of saplings is mentioned. This code can then be used on our website to track the exact location of the planted sapling.",
             },
             {
               question: "How are the trees/saplings planted?",

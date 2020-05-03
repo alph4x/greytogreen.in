@@ -1,58 +1,98 @@
-.trackingInfoContainer {
-  opacity: 0.95;
-  z-index: 500;
-  position: relative;
-}
-
-#cardContainer {
-  width: 20vw;
-}
-
-.card-col {
-  /* padding: 5px !important; */
-}
-
 .mapsContainer {
-  position: absolute;
+  position: relative;
   height: 70vh;
   width: 100%;
 }
 
-#cardTitleImg {
+.trackingCard {
+  background: #fff;
+  box-shadow: 5px 5px 20px 0 rgba(20, 20, 20, 0.09);
+  height: 600px;
+  width: 100%;
   display: block;
-  margin: 0 auto;
-  height: 13vh;
-  width: 13vh;
+  margin: 5vh auto;
 }
 
-.card-title {
+.userProfileImg {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 15px auto;
+}
+
+.userProfileName {
+  font-size: 2em;
   text-align: center;
+  color: #1e3a2b;
 }
 
-.cardBodyIllustration {
-  margin: auto;
-  height: 10vh;
-  width: 10vh;
+.illustrationsDiv {
+  display: flex;
+  flex: 1;
+
+  width: 80%;
 }
 
-#numTrees {
-  font-size: 1.7rem;
-  display: block;
+.saplingsCol,
+.dateCol {
+  width: 45%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.sap-img {
+  width: 50%;
+}
+
+.sap-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.saplings-txt {
+  width: 50%;
   text-align: center;
-  margin: 0 auto;
+  margin: 1.6vh 0 0 -1.5vw;
+  font-size: 1em;
 }
 
-#saplingSpan {
-  display: block;
-  margin-top: -2vh;
+.sap-no {
+  font-size: 1.8em !important;
 }
 
-#date {
-  display: block;
-  font-size: 1.7rem;
+.sap-txt {
+  margin-top: -1vh;
 }
 
-#time {
-  display: block;
-  margin-top: -2vh;
+.date-txt {
+  /* width: 30% !important; */
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .trackingCard {
+    height: 550px;
+    transform: scale(0.95);
+    margin-top: -15px;
+    margin-bottom: 5px;
+  }
+
+  .illustrationsDiv {
+    flex-direction: column;
+  }
+
+  .saplingsCol,
+  .dateCol {
+    width: 90%;
+    margin: 0;
+  }
+
+  .trackingContent {
+    width: 80%;
+    font-size: 1em;
+    margin: 15px auto;
+    text-align: justify;
+    display: block;
+  }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 import React from "react";
 import "./adoptTrees.css";
 import logo from "../assets/images/LOGO-2.png";
@@ -13,19 +14,27 @@ export default class adoptComponent extends React.Component {
       treePrice: 10, //Change tree price here (this will be static)
       totalPrice: 0, //Default no of trees' price (don't change here, gets calculated automatically later)
       first_term: 5,
+      inputLength: 1,
     };
 
     this.openCheckout = this.openCheckout.bind(this);
   }
 
-  performOp(e) {
+  async performOp(e) {
     var operator = e.target.textContent;
     var num = this.state.numTrees;
+    // eslint-disable-next-line no-eval
     var newNum = eval(num + operator + 1);
-    this.updateConf(newNum);
+    await this.updateConf(newNum);
   }
 
   updateConf(newNum) {
+    // if ((Number(treesInput.value) + 1) % 10 === 0) {
+    //   this.setState({ inputLength: treesInput.value.length });
+    //   document.getElementById("counter").style.width =
+    //     document.getElementById("counter").offsetWidth + 50 + "px";
+    // }
+
     var tp = this.state.treePrice;
     this.setState({ numTrees: newNum });
     this.setState({ totalPrice: newNum * tp });
@@ -74,8 +83,14 @@ export default class adoptComponent extends React.Component {
       ></div>
     );
     this.trees_div = [];
-    for (var i = 0; i < newNum; i++) {
-      this.trees_div.push(tree_div);
+    if (newNum <= 5000) {
+      for (i = 0; i < newNum; i++) {
+        this.trees_div.push(tree_div);
+      }
+    } else {
+      for (i = 0; i < 5000; i++) {
+        this.trees_div.push(tree_div);
+      }
     }
   }
 
@@ -109,7 +124,7 @@ export default class adoptComponent extends React.Component {
         };
         //send all details to server
         await axios
-          .post("https://api.greytogreen.in/getDetails/razorpay", objToSend)
+          .post("http://localhost:4500/getDetails/razorpay", objToSend)
           .then((res) => {
             //recieve success callback URL and redirect
             window.location = res.data;
@@ -132,13 +147,13 @@ export default class adoptComponent extends React.Component {
           };
           //send frontend details to server(DB) and get an ID
           await axios
-            .post("https://api.greytogreen.in/getDetails/paytm", objToSend)
+            .post("http://localhost:4500/getDetails/paytm", objToSend)
             .then((response) => {
               id = response.data.id;
             });
           //redirect to paytm payment page
           window.location =
-            "https://api.greytogreen.in/pay/paywithpaytm/:" +
+            "http://localhost:4500/pay/paywithpaytm/:" +
             id +
             "?amount=" +
             this.state.totalPrice;
@@ -168,7 +183,7 @@ export default class adoptComponent extends React.Component {
   async submitHandler() {
     //get server generated order details
     await axios
-      .post("https://api.greytogreen.in/pay/razorpay", {
+      .post("http://localhost:4500/pay/razorpay", {
         price: this.state.totalPrice,
       })
       .then((response) => {
@@ -235,7 +250,7 @@ export default class adoptComponent extends React.Component {
 
           {/* COUNTER */}
           <center>
-            <div className="counter">
+            <div id="counter" className="counter">
               <div
                 id="decrement"
                 className="operator column"

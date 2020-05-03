@@ -33,9 +33,47 @@ export default class TrackInfo extends React.Component {
 
   render() {
     return (
-      <div className="container" style={{ height: "100vh" }}>
+      <div className="container">
         <Section>
           <SectionHeader title="Track" centered />
+          <div className="trackingInfoContainer">
+            <div className="trackingCard">
+              <br />
+              <div className="userProfile">
+                <img className="userProfileImg" src={x} alt="" />
+                <p className="is-caslon userProfileName">Danish Arora</p>
+              </div>
+              <center>
+                <div className="illustrationsDiv">
+                  <div className="saplingsCol">
+                    <div className="sap-img">
+                      <img className="sap-icon" src={x} alt="" />
+                    </div>
+                    <div className="saplings-txt ">
+                      <span className="sap-no is-caslon" id="sap-no">
+                        37
+                      </span>
+                      <p className="sap-txt is-century">saplings</p>
+                    </div>
+                  </div>
+                  <div className="dateCol">
+                    <div className="sap-img">
+                      <img className="sap-icon" src={x} alt="" />
+                    </div>
+                    <div className="saplings-txt date-txt is-caslon">
+                      <span className="sap-no is-caslon" id="dateSpan">
+                        28.06.19
+                      </span>
+                      <p className="sap-txt is-century">17:28 IST</p>
+                    </div>
+                  </div>
+                </div>
+              </center>
+              <p className="trackingContent">
+                lorem ipsum lorem ipsum lorem ipsum lorem ipsum{" "}
+              </p>
+            </div>
+          </div>
           <div className="mapsContainer">
             <Map
               bootstrapURLKeys={{
@@ -51,54 +89,7 @@ export default class TrackInfo extends React.Component {
               />
             </Map>
           </div>
-          <div className="trackingInfoContainer">
-            <Card id="cardContainer">
-              <Card.Img variant="top" src={cardTitleImg} id="cardTitleImg" />
-              <Card.Body>
-                <Card.Title>User's Name</Card.Title>
-                <div className="row cardBodyIllustrations">
-                  <div className="col card-col">
-                    <div className="row">
-                      <img
-                        className="col card-col cardBodyIllustration"
-                        src={x}
-                        alt="x"
-                      ></img>
-                      <p className="col card-col" style={{ margin: "auto" }}>
-                        <span id="numTrees" className="is-caslon">
-                          37
-                        </span>
-                        <span className="is-century" id="saplingSpan">
-                          saplings
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col card-col">
-                    <div className="row">
-                      <img
-                        className="col card-col cardBodyIllustration"
-                        src={x}
-                        alt="x"
-                      ></img>
-                      <p className="col card-col" style={{ margin: "auto" }}>
-                        <span id="date" className="is-caslon">
-                          28.06.19
-                        </span>
-                        <br></br>
-                        <span id="time">17:28 IST</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        </Section>{" "}
+        </Section>
       </div>
     );
   }

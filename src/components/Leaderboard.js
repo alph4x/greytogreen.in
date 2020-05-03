@@ -84,7 +84,7 @@ class App extends React.Component {
 
   async getLeaderboardRecent() {
     await Axios.get(
-      "https://api.greytogreen.in/getUserDetails/leaderboard/recent"
+      "http://localhost:4500/getUserDetails/leaderboard/recent"
     ).then(async (res) => {
       await this.setState({ recentList: res.data, loading: false });
       console.log(this.state.recentList);
@@ -93,7 +93,7 @@ class App extends React.Component {
 
   async getLeaderboardMost() {
     await Axios.get(
-      "https://api.greytogreen.in/getUserDetails/leaderboard/most"
+      "http://localhost:4500/getUserDetails/leaderboard/most"
     ).then(async (res) => {
       await this.setState({ mostList: res.data, loading: false });
       console.log("most", this.state.mostList);

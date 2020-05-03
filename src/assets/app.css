@@ -6,7 +6,7 @@ body {
   padding: 0px;
 
   max-width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden !important; */
 }
 
 @font-face {
@@ -89,6 +89,7 @@ body {
 .navbar-menu {
   justify-content: flex-end;
   background-color: transparent !important;
+  align-items: center;
   /* box-shadow: none; */
   /* width: 100%; */
 }

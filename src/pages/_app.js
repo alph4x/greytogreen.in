@@ -31,7 +31,7 @@ const PreLoaderComponent = () => (
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = { isLoading: false };
   }
 
   componentDidMount() {

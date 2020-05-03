@@ -65,7 +65,7 @@ input[type="number"] {
 
 .counter {
   background: #e7aea3;
-  width: 20vw;
+  width: 15vw;
   height: 9.2vh;
   display: flex;
   flex: 1;
@@ -77,13 +77,13 @@ input[type="number"] {
 #treesNumInput {
   background: #1d392a;
   border: none;
-  padding: 15px;
+  padding: 7.5px 30px;
   height: 100%;
   color: #e7aea3;
   font-family: "Caslon CP", sans-serif;
   font-size: 2.5em;
   text-align: center;
-  width: 7.5vw;
+  width: 50%;
   outline: none;
 }
 
@@ -98,6 +98,7 @@ input[type="number"] {
   font-size: 2.5em;
   color: #577f67;
   cursor: pointer;
+  width: 25%;
 }
 
 .counter-undertext {
@@ -128,8 +129,8 @@ input[type="number"] {
 .tree {
   width: 150px;
   height: 150px;
-  background: url(../assets/images/LOGO-single.png);
-  background-size: cover;
+  background: url(../assets/images/LOGO-single.png) no-repeat;
+  background-size: contain;
 }
 
 .adopt-btn {
@@ -159,12 +160,12 @@ input[type="number"] {
   }
 
   .counter {
-    width: 38vw;
+    width: 42vw;
     height: 6.5vh;
   }
 
   #treesNumInput {
-    width: 18vw;
+    width: 50%;
     font-size: 2em;
   }
 

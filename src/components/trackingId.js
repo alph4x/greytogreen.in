@@ -13,7 +13,7 @@ export default class TrackingId extends React.Component {
 
   async checkViewChange() {
     //DB fetch call to get lat & long
-    await Axios.post("https://api.greytogreen.in/getUserDetails", {
+    await Axios.post("http://localhost:4500/getUserDetails", {
       trackingId: this.state.trackingId,
     }).then((res) => this.setState({ user: res.data[0] }));
 
@@ -34,10 +34,15 @@ export default class TrackingId extends React.Component {
 
   async btnHandler(e) {
     e.preventDefault();
-    const trackingId = document.getElementById("trackingId").value;
+    // const trackingId = document.getElementById("trackingId").value;
+    const trackingId = "6aa3f800-c5d3-44fe-b375-4904466d8899";
     console.log(trackingId);
     await this.setState({ trackingId: trackingId });
     this.checkViewChange();
+  }
+
+  componentDidMount() {
+    document.getElementById("submitBtn").click();
   }
 
   render() {
@@ -60,6 +65,7 @@ export default class TrackingId extends React.Component {
 
             <center>
               <span
+                id="submitBtn"
                 variant="primary"
                 className="submitBtn"
                 onClick={this.btnHandler.bind(this)}

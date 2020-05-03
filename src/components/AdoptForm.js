@@ -50,6 +50,15 @@ export default class AdoptForm extends React.Component {
     await this.setState({ giftMessage: e.target.value });
   }
 
+  certificateShow() {
+    Swal.fire({
+      imageUrl: certificate,
+      imageWidth: 400,
+      imageHeight: 250,
+      imageAlt: "Custom image",
+    });
+  }
+
   async onSubmitHandler(e) {
     e.preventDefault();
     //send form details
@@ -161,6 +170,7 @@ export default class AdoptForm extends React.Component {
                   We’ll send a certificate to your email address, which you can
                   forward along or print.
                   <span
+                    onClick={this.certificateShow.bind(this)}
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                   >
                     (Here's an example)

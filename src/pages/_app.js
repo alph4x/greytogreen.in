@@ -16,17 +16,6 @@ import "../assets/app.css";
 import DIY from "../components/DIY";
 import SecretAccess from "./SecretAccess";
 import Thankyou from "./thankyou";
-import { Preloader, Puff } from "react-preloader-icon";
-
-const PreLoaderComponent = () => (
-  <Preloader
-    use={Puff}
-    size={60}
-    strokeWidth={6}
-    strokeColor="#262626"
-    duration={2000}
-  />
-);
 
 export default class App extends React.Component {
   constructor(props) {
@@ -34,18 +23,8 @@ export default class App extends React.Component {
     this.state = { isLoading: false };
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 2000);
-  }
-
   render() {
-    return this.state.isLoading === true ? (
-      <div style={{ display: "block", margin: "auto" }}>
-        <PreLoaderComponent />
-      </div>
-    ) : (
+    return (
       <Router>
         <>
           <Navbar color="lightergreen" spaced={true} logo={logo} />

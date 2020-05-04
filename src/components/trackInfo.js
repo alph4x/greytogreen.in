@@ -62,9 +62,18 @@ export default class TrackInfo extends React.Component {
               <div className="userProfile">
                 <img className="userProfileImg" src={x} alt="" />
                 <p className="is-caslon userProfileName">
-                  {this.state.user.gift
-                    ? this.state.user.giftTo
-                    : this.state.user.name}
+                  {this.state.user.gift ? (
+                    <p>
+                      {" "}
+                      <i
+                        style={{ color: "#f03434" }}
+                        class="fas fa-hand-holding-heart"
+                      ></i>{" "}
+                      {this.state.user.giftTo}{" "}
+                    </p>
+                  ) : (
+                    this.state.user.name
+                  )}
                 </p>
               </div>
               <center>

@@ -31,8 +31,23 @@ const List = (props) => (
         personImg={person.squareImage}
         personDate={new Date(person.date).toLocaleDateString()}
         personTime={new Date(person.date).toLocaleTimeString()}
-        personName={person.name}
-        personMessage={person.gift ? person.giftMessage : person.message}
+        personName={
+          person.gift ? (
+            <p>
+              <i
+                style={{ color: "#f03434" }}
+                class="fas fa-hand-holding-heart"
+              ></i>{" "}
+              &nbsp;
+              {person.giftTo}
+            </p>
+          ) : (
+            <p>{person.name}</p>
+          )
+        }
+        personMessage={
+          person.gift ? <p>{person.giftMessage}</p> : <p>{person.message}</p>
+        }
         personTrees={person.numTrees}
       />
     ))}

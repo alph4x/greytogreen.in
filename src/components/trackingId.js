@@ -33,8 +33,7 @@ export default class TrackingId extends React.Component {
 
   async btnHandler(e) {
     e.preventDefault();
-    // const trackingId = document.getElementById("trackingId").value;
-    const trackingId = "6aa3f800-c5d3-44fe-b375-4904466d8899";
+    const trackingId = document.getElementById("trackingId").value;
     console.log(trackingId);
     await this.setState({ trackingId: trackingId });
     this.checkViewChange();

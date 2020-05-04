@@ -30,11 +30,13 @@ export default class AdoptForm extends React.Component {
   async giftCheck(e) {
     if (e.target.checked) {
       document.getElementById("giftForm").className = "toggleShow";
-      document.getElementById("sec2").style.height = "160vh";
+      document.getElementById("sec2").style.height =
+        document.getElementById("sec2").offsetHeight + 270 + "px";
       await this.setState({ gift: !this.state.gift });
     } else {
       document.getElementById("giftForm").className = "toggleHide";
-      document.getElementById("sec2").style.height = "120vh";
+      document.getElementById("sec2").style.height =
+        document.getElementById("sec2").offsetHeight - 270 + "px";
       await this.setState({ gift: !this.state.gift });
     }
   }
@@ -111,6 +113,7 @@ export default class AdoptForm extends React.Component {
         </Jumbotron>
         <div className="payment-form">
           <Card
+            id="formCard"
             style={{
               textAlign: "center",
             }}

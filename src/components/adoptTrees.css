@@ -153,7 +153,7 @@ input[type="number"] {
 
 @media (max-width: 420px) {
   .sec1 {
-    height: calc(100vh - 90px);
+    height: calc(115vh - 90px);
   }
   #trees_title {
     font-size: 2rem;
@@ -193,5 +193,25 @@ input[type="number"] {
 
   #adoptNowBtn {
     margin-bottom: -8px !important;
+  }
+}
+
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  .sec1 {
+    height: 120vh;
+  }
+
+  #counter {
+    width: 50%;
+  }
+}
+
+@media (device-height: 640px) and (device-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
+  .sec1 {
+    height: 110vh;
+  }
+
+  #counter {
+    width: 50%;
   }
 }

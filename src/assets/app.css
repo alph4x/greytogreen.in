@@ -9,6 +9,14 @@ body {
   height: auto;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
 @font-face {
   font-family: "Caslon CP";
   src: url(../assets/fonts/ccp_light.otf) format("opentype");

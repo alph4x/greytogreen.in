@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.16c7d5ae.chunk.css",
-    "main.js": "/static/js/main.1326c0cb.chunk.js",
-    "main.js.map": "/static/js/main.1326c0cb.chunk.js.map",
+    "main.css": "/static/css/main.6a885d56.chunk.css",
+    "main.js": "/static/js/main.0bc61497.chunk.js",
+    "main.js.map": "/static/js/main.0bc61497.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ee010801.js",
     "runtime-main.js.map": "/static/js/runtime-main.ee010801.js.map",
     "static/css/2.17e5ed98.chunk.css": "/static/css/2.17e5ed98.chunk.css",
-    "static/js/2.3f69cce6.chunk.js": "/static/js/2.3f69cce6.chunk.js",
-    "static/js/2.3f69cce6.chunk.js.map": "/static/js/2.3f69cce6.chunk.js.map",
+    "static/js/2.dd65d16f.chunk.js": "/static/js/2.dd65d16f.chunk.js",
+    "static/js/2.dd65d16f.chunk.js.map": "/static/js/2.dd65d16f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.319bcd85b2f7a63fa075998f3942fb96.js": "/precache-manifest.319bcd85b2f7a63fa075998f3942fb96.js",
+    "precache-manifest.be0ec5b75fb349f6f9799b5bb2a322c7.js": "/precache-manifest.be0ec5b75fb349f6f9799b5bb2a322c7.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.17e5ed98.chunk.css.map": "/static/css/2.17e5ed98.chunk.css.map",
-    "static/css/main.16c7d5ae.chunk.css.map": "/static/css/main.16c7d5ae.chunk.css.map",
+    "static/css/main.6a885d56.chunk.css.map": "/static/css/main.6a885d56.chunk.css.map",
     "static/media/LOGO-2.png": "/static/media/LOGO-2.f583aea2.png",
     "static/media/adoptTrees.css": "/static/media/LOGO-single.beb8094f.png",
     "static/media/app.css": "/static/media/cg.09f6b2ba.ttf",
@@ -28,14 +28,16 @@
     "static/media/thanks_for_adopting_illustration.png": "/static/media/thanks_for_adopting_illustration.1525d07a.png",
     "static/media/tracking-calendar.png": "/static/media/tracking-calendar.16dad975.png",
     "static/media/tracking-tree.png": "/static/media/tracking-tree.6ccaa6ef.png",
+    "static/media/tree1.png": "/static/media/tree1.835fb45f.png",
     "static/media/tree2.png": "/static/media/tree2.9c93c82f.png",
+    "static/media/tree3.png": "/static/media/tree3.1a883140.png",
     "static/media/tree4.png": "/static/media/tree4.62d39897.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ee010801.js",
     "static/css/2.17e5ed98.chunk.css",
-    "static/js/2.3f69cce6.chunk.js",
-    "static/css/main.16c7d5ae.chunk.css",
-    "static/js/main.1326c0cb.chunk.js"
+    "static/js/2.dd65d16f.chunk.js",
+    "static/css/main.6a885d56.chunk.css",
+    "static/js/main.0bc61497.chunk.js"
   ]
 }

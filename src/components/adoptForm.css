@@ -297,6 +297,46 @@
   .formCard {
     width: 50vw;
   }
+
+  #counter {
+    width: 30vw;
+  }
+
+  .sec1 {
+    height: 95vh;
+  }
+}
+
+/* IPAD PRO */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+  .formCard {
+    width: 50vw;
+  }
+
+  #counter {
+    width: 30vw;
+    height: 7vh;
+  }
+
+  .sec1 {
+    height: 95vh;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-device-width: 900px) and (max-device-width: 1440px) {
+  .formCard {
+    width: 30vw;
+  }
+
+  #counter {
+    /* width: 30vw; */
+    height: 7vh;
+  }
+
+  .sec1 {
+    height: 95vh;
+  }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
@@ -325,4 +365,24 @@
 
 .jumbotron {
   padding: 0px !important;
+}
+
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  .sec2 {
+    height: 170vh;
+  }
+
+  .formCard {
+    width: 90vw;
+  }
+}
+
+@media (device-height: 640px) and (device-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
+  .sec2 {
+    height: 150vh;
+  }
+
+  .formCard {
+    width: 90vw;
+  }
 }

@@ -19,18 +19,18 @@ function ContactForm(props) {
   let errors = [];
 
   // Function for fetching error for a field
-  const getError = field => {
-    return errors.find(e => e.field === field);
+  const getError = (field) => {
+    return errors.find((e) => e.field === field);
   };
 
   // Function to see if field is empty
-  const isEmpty = val => val.trim() === "";
+  const isEmpty = (val) => val.trim() === "";
 
   // Add error if email empty
   if (isEmpty(email)) {
     errors.push({
       field: "email",
-      message: "Please enter an email"
+      message: "Please enter an email",
     });
   }
 
@@ -38,7 +38,7 @@ function ContactForm(props) {
   if (isEmpty(message)) {
     errors.push({
       field: "message",
-      message: "Please enter a message"
+      message: "Please enter a message",
     });
   }
 
@@ -47,13 +47,13 @@ function ContactForm(props) {
     if (isEmpty(name)) {
       errors.push({
         field: "name",
-        message: "Please enter your name"
+        message: "Please enter your name",
       });
     }
   }
 
   // Handle form submission
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     // If field errors then show them
     if (errors.length) {
       setShowErrors(true);
@@ -63,7 +63,7 @@ function ContactForm(props) {
         props.onSubmit({
           name,
           email,
-          message
+          message,
         });
       }
     }
@@ -76,7 +76,7 @@ function ContactForm(props) {
       )}
 
       <form
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault();
           handleSubmit();
         }}
@@ -89,7 +89,7 @@ function ContactForm(props) {
                 type="text"
                 placeholder="Name"
                 error={showErrors && getError("name")}
-                onChange={value => setName(value)}
+                onChange={(value) => setName(value)}
               />
             )}
 
@@ -98,7 +98,7 @@ function ContactForm(props) {
               type="email"
               placeholder="Email"
               error={showErrors && getError("email")}
-              onChange={value => setEmail(value)}
+              onChange={(value) => setEmail(value)}
             />
           </div>
         </div>
@@ -109,7 +109,7 @@ function ContactForm(props) {
               type="textarea"
               placeholder="Message"
               error={showErrors && getError("message")}
-              onChange={value => setMessage(value)}
+              onChange={(value) => setMessage(value)}
             />
           </div>
         </div>

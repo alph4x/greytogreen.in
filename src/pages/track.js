@@ -14,8 +14,7 @@ export default class Track extends React.Component {
 
   async viewChange(view, userDetails) {
     if (view === 2) {
-      await this.setState({ user: userDetails });
-      this.setState({ view: 2 });
+      await this.setState({ user: userDetails, view: 2 });
     }
   }
 
@@ -26,6 +25,7 @@ export default class Track extends React.Component {
           <TrackingId viewChange={this.viewChange.bind(this)} />
         ) : (
           <TrackInfo
+            user={this.state.user}
             //convert mongoose decimals to float datatype
             lat={parseFloat(this.state.user.plantedLat.$numberDecimal)}
             lng={parseFloat(this.state.user.plantedLng.$numberDecimal)}

@@ -26,7 +26,7 @@ function CtaSection(props) {
                 size="large"
                 onClick={props.buttonOnClick}
               >
-                Adopt now!
+                ADOPT NOW
               </SectionButton>
               <div className="DIY is-century" style={{ textAlign: "center" }}>
                 <span

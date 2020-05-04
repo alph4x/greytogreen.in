@@ -22,7 +22,6 @@ function Navbar(props) {
             </Link>
           </div>
           <div
-            id="hamburger"
             className={"navbar-burger burger" + (menuOpen ? " is-active" : "")}
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -38,7 +37,9 @@ function Navbar(props) {
           <span
             className="navlink is-century"
             onClick={() => {
-              document.getElementById("hamburger").click();
+              document
+                .getElementById("navlinksContainer")
+                .classList.remove("is-active");
               router.push("/track");
             }}
           >
@@ -47,7 +48,9 @@ function Navbar(props) {
           <span
             className="navlink is-century"
             onClick={() => {
-              document.getElementById("hamburger").click();
+              document
+                .getElementById("navlinksContainer")
+                .classList.remove("is-active");
               router.push("/diy");
             }}
           >
@@ -56,8 +59,10 @@ function Navbar(props) {
           <span
             className="navlink is-century"
             onClick={() => {
-              document.getElementById("hamburger").click();
-              router.push("/about");
+              document
+                .getElementById("navlinksContainer")
+                .classList.remove("is-active");
+              router.push("/aboutus");
             }}
           >
             About
@@ -65,7 +70,9 @@ function Navbar(props) {
           <span
             className="navlink is-century"
             onClick={() => {
-              document.getElementById("hamburger").click();
+              document
+                .getElementById("navlinksContainer")
+                .classList.remove("is-active");
               router.push("/faq");
             }}
           >

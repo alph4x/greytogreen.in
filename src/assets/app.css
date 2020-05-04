@@ -4,9 +4,9 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-
   max-width: 100%;
-  /* overflow-x: hidden !important; */
+  overflow-x: hidden;
+  height: auto;
 }
 
 @font-face {

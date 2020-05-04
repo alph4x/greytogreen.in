@@ -36,8 +36,12 @@ function Footer(props) {
                   <p className="menu-label">Product</p>
                   <ul className="menu-list">
                     <li>
-                      <Link to="/pricing">Pricing</Link>
+                      <Link to="/adopt">Adopt a tree</Link>
                     </li>
+                    <li>
+                      <Link to="/track">Track your tree</Link>
+                    </li>
+
                     <li>
                       <Link to="/faq">FAQ</Link>
                     </li>
@@ -72,6 +76,19 @@ function Footer(props) {
                   <ul className="menu-list">
                     <li>
                       <a
+                        href="https://instagram.com/greytogreen.in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="https://uploads.divjoy.com/icon-instagram.svg"
+                          alt="Instagram"
+                        />
+                        Instagram
+                      </a>
+                    </li>
+                    <li>
+                      <a
                         href="https://facebook.com"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -83,19 +100,7 @@ function Footer(props) {
                         Facebook
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="https://uploads.divjoy.com/icon-instagram.svg"
-                          alt="Instagram"
-                        />
-                        Instagram
-                      </a>
-                    </li>
+
                     <li>
                       <a
                         href="https://twitter.com"

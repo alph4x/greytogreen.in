@@ -73,7 +73,7 @@ export default class App extends React.Component {
             color="white"
             size="medium"
             logo={logo}
-            description="A short description of what you do here"
+            description="planting for a greener future"
             copyright="© greytogreen"
           />
         </>

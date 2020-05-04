@@ -27,7 +27,6 @@ export default class TrackingId extends React.Component {
       });
     } else if (this.state.trackingId === this.state.user.trackingId) {
       //checks if incoming trackindId matches component trackindId
-      console.log("view change");
       this.props.viewChange(2, this.state.user);
     }
   }
@@ -39,10 +38,6 @@ export default class TrackingId extends React.Component {
     console.log(trackingId);
     await this.setState({ trackingId: trackingId });
     this.checkViewChange();
-  }
-
-  componentDidMount() {
-    document.getElementById("submitBtn").click();
   }
 
   render() {

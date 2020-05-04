@@ -160,12 +160,23 @@ export default class AdoptForm extends React.Component {
               </Form.Group>
               {/* Gift checkbox */}
               <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  type="checkbox"
-                  label="My donation is a gift for someone"
-                  style={{ textAlign: "left" }}
-                  onChange={this.giftCheck.bind(this)}
-                />
+                <div style={{ textAlign: "left" }}>
+                  <i
+                    style={{ color: "#f03434" }}
+                    class="fas fa-hand-holding-heart"
+                  ></i>{" "}
+                  &nbsp;
+                  <input
+                    type="checkbox"
+                    id="giftCheckbox"
+                    name="giftCheckbox"
+                    onChange={this.giftCheck.bind(this)}
+                  />
+                  <label for="giftCheckbox">
+                    &nbsp; This is a gift for someone &nbsp;
+                  </label>
+                </div>
+
                 <Form.Text className="text-muted" style={{ textAlign: "left" }}>
                   We’ll send a certificate to your email address, which you can
                   forward along or print.

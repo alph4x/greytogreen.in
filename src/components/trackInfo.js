@@ -32,7 +32,6 @@ export default class TrackInfo extends React.Component {
       },
       zoom: 13,
     };
-    console.log();
   }
 
   componentDidMount() {}
@@ -62,7 +61,11 @@ export default class TrackInfo extends React.Component {
               <br />
               <div className="userProfile">
                 <img className="userProfileImg" src={x} alt="" />
-                <p className="is-caslon userProfileName">Danish Arora</p>
+                <p className="is-caslon userProfileName">
+                  {this.state.user.gift
+                    ? this.state.user.giftTo
+                    : this.state.user.name}
+                </p>
               </div>
               <center>
                 <div className="illustrationsDiv">

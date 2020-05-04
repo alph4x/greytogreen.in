@@ -3,6 +3,10 @@ import axios from "axios";
 import "./Leaderboard.scss";
 import { Spinner, Tabs, Tab } from "react-bootstrap";
 import Axios from "axios";
+import icon1 from "../assets/images/tree1.png";
+import icon2 from "../assets/images/tree2.png";
+import icon3 from "../assets/images/tree3.png";
+import icon4 from "../assets/images/tree4.png";
 
 const Person = (props) => (
   <div className="list__person">
@@ -28,7 +32,15 @@ const List = (props) => (
   <div className="list">
     {props.list.map((person) => (
       <Person
-        personImg={person.squareImage}
+        personImg={
+          person.numTrees <= 30
+            ? person.numTrees <= 10
+              ? icon1
+              : icon2
+            : person.numTrees <= 100
+            ? icon3
+            : icon4
+        }
         personDate={new Date(person.date).toLocaleDateString()}
         personTime={new Date(person.date).toLocaleTimeString()}
         personName={

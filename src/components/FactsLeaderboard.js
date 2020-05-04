@@ -7,6 +7,7 @@ import "./FactsLeaderboard.css";
 export default class FactsLeaderboard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() {

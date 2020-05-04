@@ -25,9 +25,25 @@ export default class TrackingId extends React.Component {
         text: "Are you sure that is correct?",
         icon: "question",
       });
-    } else if (this.state.trackingId === this.state.user.trackingId) {
-      //checks if incoming trackindId matches component trackindId
+    } else if (
+      this.state.trackingId === this.state.user.trackingId &&
+      this.state.user.planted === true
+    ) {
+      //checks if incoming trackindId matches component trackindId & is planted
       this.props.viewChange(2, this.state.user);
+    } else if (
+      this.state.trackingId === this.state.user.trackingId &&
+      this.state.user.planted === false
+    ) {
+      //checks if incoming trackindId matches component trackindId but isn't planted yet
+      Swal.fire({
+        confirmButtonColor: "#1d392a",
+        title: "In progress!",
+        titleText: "In progress!",
+        text:
+          "We are working on alloting your batch of saplings a new home. You'll hear soon from us!",
+        icon: "success",
+      });
     }
   }
 

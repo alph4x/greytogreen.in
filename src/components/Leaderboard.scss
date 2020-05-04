@@ -53,7 +53,7 @@
       display: flex;
       // min-height: 80px;
       align-items: center;
-      padding: 10px 15px;
+      padding: 10px 35px;
       margin: 0.5vh 1vw;
       border-radius: 4px;
       box-shadow: 0px 2px 18px 7px rgba(189, 189, 189, 0.21);
@@ -81,7 +81,8 @@
       }
 
       .person__text {
-        margin-right: 3vw;
+        display: block;
+        margin: 0 auto;
         text-align: center;
       }
 
@@ -141,7 +142,7 @@
     max-width: 320px;
 
     .list__person {
-      padding: 4px 8px;
+      padding: 4px 12px;
 
       .person__image {
         max-width: 56px;

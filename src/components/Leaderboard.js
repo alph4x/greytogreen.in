@@ -10,7 +10,7 @@ import icon4 from "../assets/images/tree4.png";
 
 const Person = (props) => (
   <div className="list__person">
-    <div style={{ marginRight: "2vw" }}>
+    <div>
       <img className="person__image" src={props.personImg} alt="user icon" />
       <span className="timeDate">{props.personDate}</span>
       <span className="timeDate">{props.personTime}</span>
@@ -19,7 +19,9 @@ const Person = (props) => (
       <p className="person__name">{props.personName}</p>
       <p className="personMessage">{props.personMessage}</p>
     </div>
-    <p className="person__networth lightgreen-font">{props.personTrees}</p>
+    <div>
+      <p className="person__networth lightgreen-font">{props.personTrees}</p>
+    </div>
   </div>
 );
 

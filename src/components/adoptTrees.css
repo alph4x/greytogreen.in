@@ -88,10 +88,11 @@ input[type="number"] {
 }
 
 #trees_title {
-  font-family: "Caslon CP", sans-serif;
+  font-family: "Century Gothic", sans-serif;
   color: #1d392a;
   font-weight: lighter;
-  padding-top: 2rem;
+  padding: 2rem 2vw 0 2vw;
+  font-size: 2.2rem;
 }
 
 .operator {
@@ -135,7 +136,7 @@ input[type="number"] {
 
 .adopt-btn {
   background: #1d392a;
-  font-family: "Caslon CP", sans-serif;
+  font-family: "Century Gothic", sans-serif;
   color: #fff;
   font-size: 24px;
   padding: 20px 40px 20px 40px;
@@ -145,6 +146,7 @@ input[type="number"] {
   cursor: pointer;
   display: inline-block;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .redirect-subtxt {
@@ -156,7 +158,7 @@ input[type="number"] {
     height: calc(115vh - 90px);
   }
   #trees_title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .counter {
@@ -180,7 +182,7 @@ input[type="number"] {
 
   .adopt-btn {
     background: #1d392a;
-    font-family: "Caslon CP", sans-serif;
+    font-family: "Century Gothic", sans-serif;
     color: #fff;
     font-size: 20px;
     padding: 20px 40px 20px 40px;

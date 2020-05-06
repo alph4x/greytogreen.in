@@ -34,6 +34,7 @@ function CtaSection(props) {
                     fontSize: "14px",
                     textDecoration: "underline",
                     cursor: "pointer",
+                    textTransform: "uppercase",
                   }}
                   onClick={() => {
                     window.location.href = "/diy";

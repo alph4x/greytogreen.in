@@ -65,10 +65,7 @@ export default class TrackInfo extends React.Component {
                   {this.state.user.gift ? (
                     <p>
                       {" "}
-                      <i
-                        style={{ color: "#f03434" }}
-                        class="fas fa-hand-holding-heart"
-                      ></i>{" "}
+                      <i className="fontawesome fas fa-gift"></i>{" "}
                       {this.state.user.giftTo}{" "}
                     </p>
                   ) : (
@@ -105,8 +102,8 @@ export default class TrackInfo extends React.Component {
                 </div>
               </center>
               <p className="trackingContent is-century">
-                We are pleased to inform you that your saplings are happy and
-                healthy. To track their location, refer to the maps down above.
+                we are pleased to inform you that your saplings are happy and
+                healthy. to track their location, refer to the map above.
               </p>
             </div>
           </div>

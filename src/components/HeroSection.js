@@ -3,10 +3,12 @@ import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import SectionButton from "./SectionButton";
 import { useRouter } from "./../util/router.js";
+import Axios from "axios";
 
 export default class HeroSection extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
     // const router = useRouter();
   }
 
@@ -26,8 +28,14 @@ export default class HeroSection extends React.Component {
   }
 
   componentDidMount() {
+    Axios.get("http://localhost:4500/getUserDetails/totalPlanted").then(
+      (res) => {
+        this.setState({ totalTreesPlanted: res.data.totalTreesPlanted });
+        this.animateValue("treesNum", 0, this.state.totalTreesPlanted, 2000);
+      }
+    );
     //enter values for total trees planted here
-    this.animateValue("treesNum", 0, 542, 2000);
+    setTimeout(() => {}, 2000);
   }
 
   render() {
@@ -64,6 +72,7 @@ export default class HeroSection extends React.Component {
                 fontSize: "14px",
                 textDecoration: "underline",
                 cursor: "pointer",
+                textTransform: "uppercase",
               }}
               onClick={() => {
                 window.location.href = "/diy";
@@ -78,6 +87,7 @@ export default class HeroSection extends React.Component {
               textAlign: "center",
               marginTop: "20px",
               marginBottom: "-25px",
+              textTransform: "uppercase",
             }}
             className="is-caslon darkgreen-font"
           >

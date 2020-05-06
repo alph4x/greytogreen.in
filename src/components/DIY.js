@@ -28,7 +28,7 @@ export default class DIY extends React.Component {
       <Section color={this.props.color} size={this.props.size}>
         <div className="ContactSection__container container">
           <SectionHeader
-            title="DO IT YOURSELF"
+            title="do it yourself"
             subtitle={this.props.subtitle}
             centered={true}
             size={3}
@@ -38,27 +38,27 @@ export default class DIY extends React.Component {
               columns={2}
               items={[
                 {
-                  title: "DIG",
+                  title: "dig",
                   body:
                     "Dig a shallow broad pit and place the sapling inside it.",
                   image: dig,
                 },
                 {
-                  title: "PLACE",
+                  title: "place",
                   body:
-                    "Place the plant at the proper height otherwise the roots may have difficulty developing due to lack of oxygen.",
+                    "place the plant at the proper height otherwise the roots may have difficulty developing due to lack of oxygen.",
                   image: place,
                 },
                 {
-                  title: "FILL",
+                  title: "fill",
                   body:
-                    "Backfill the pit and make sure that the planted tree/sapling is straight.",
+                    "backfill the pit and make sure that the planted tree/sapling is straight.",
                   image: fill,
                 },
                 {
-                  title: "MULCH",
+                  title: "mulch",
                   body:
-                    "Mulch is an organic matter (decaying leaves, bark or compost) spread around the base of a tree to hold moisture, reduce the growth of grass and weed.",
+                    "mulch is an organic matter (decaying leaves, bark or compost) spread around the base of a tree to hold moisture, reduce the growth of grass and weed.",
                   image: mulch,
                 },
               ]}
@@ -71,9 +71,10 @@ export default class DIY extends React.Component {
                 marginTop: "4rem",
                 textAlign: "center",
                 fontSize: "24px",
+                marginBottom: "2rem",
               }}
             >
-              Here's a video to help you plant:
+              here's a video to help you plant:
             </p>
             <iframe
               title="video"
@@ -86,7 +87,7 @@ export default class DIY extends React.Component {
             ></iframe>
           </div>
           <div className="columns" style={{ marginTop: "4rem" }}>
-            <div className="column ">
+            {/* <div className="column ">
               <span
                 className="center customBtn "
                 style={{ top: "25%" }}
@@ -94,14 +95,18 @@ export default class DIY extends React.Component {
               >
                 Which plants to plant?
               </span>
-            </div>
+            </div> */}
             <div className="column">
-              <span className="center customBtn">
+              <span className="center customBtn is-century">
                 <a
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    textTransform: "none",
+                  }}
                   href="https://www.google.com/maps/search/?api=1&query=plant+nursery"
                 >
-                  Take me to the nearest nursery
+                  TAKE ME TO THE NEAREST NURSERY
                 </a>
               </span>
             </div>

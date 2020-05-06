@@ -16,35 +16,44 @@ function FaqSection(props) {
         <Faq
           items={[
             {
-              question: "Who makes up the team?",
+              question: "How do we know where & if the trees are planted?",
               answer:
-                "Whether you donate to adopt one tree or 100, plant a tree yourself or simply spread the word, anybody who is trying to save the earth is a part of our team.",
+                "with every batch of saplings you adopt, you get a unique Tracking ID associated with that particular batch. this code can then be used on our website to track the exact location of the planted sapling(s). we offer a service wherein, if you want to visit your saplings, we can arrange a meeting for you.",
             },
+
             {
               question: "How is the money spent?",
               answer:
-                "For every tree adopted, 2/3 of the amount goes toward the procurement of the sapling from local indigenous nurseries and 1/3 goes towards the plantation and maintenance of the sapling.",
+                "from a total of ₹49, your payment is righteously being made use of for: procuring the saplings, transportation, plantation and maintenance. for a detailed perspective,",
+              link: " click here to know more",
+              route: "about",
             },
             {
-              question: "How do we know where & if the trees are planted?",
+              question: "Who makes up the team?",
               answer:
-                "With every donation the donor gets a unique tracking ID associated with their batch of saplings is mentioned. This code can then be used on our website to track the exact location of the planted sapling.",
+                "whether you adopt one tree or a hundred, whether you plant a tree yourself or simply help spread the word, anybody who is trying to save the earth is a part of our team",
             },
             {
-              question: "How are the trees/saplings planted?",
+              question: "who plants the trees?",
               answer:
-                "The trees are planted with the help of a team of dedicated ambassadors.",
-              link: "Become an ambassador!",
+                "you can choose to plant your sapling yourself or we can do it for you! the trees are planted with the help of our cadre of young ambassadors",
+              link: " Become an ambassador!",
+              route: "contact",
+            },
+            {
+              question: "How do you ensure the safety of our planted saplings?",
+              answer:
+                "to combat this issue, we only plant your saplings in areas that have restricted access.",
             },
             {
               question: "Which trees do you plant?",
               answer:
-                "Trees like jamun, arjun, peepal , neem and many more are planted.",
+                "jamun, peepal, neem and arjun to name a few among a myriad of others",
             },
             {
               question: "How can I get involved?",
-              // answer: "Become an ambassador!",
-              link: "Become an ambassador!",
+              link: " Become an ambassador!",
+              route: "contact",
             },
           ]}
         />

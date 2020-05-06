@@ -1,11 +1,12 @@
 #factBtn {
   font-size: 20px;
-  padding: 8px;
+  padding: 10px;
   border: 2px;
   border-radius: 8px;
   display: block;
   margin: 5vh auto 0 auto;
   outline: none;
+  font-family: "Century Gothic" !important;
 }
 
 #factText {

@@ -13,6 +13,7 @@
 .payment-form {
   display: inline-block;
   padding-top: 5vh;
+  text-transform: none;
   /* background-color: grey; */
 }
 
@@ -28,6 +29,7 @@
 #card-title {
   padding: 10px 0px;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 .jumbotron {
@@ -37,6 +39,7 @@
 #adoptForm-title {
   font-size: 2em;
   margin-bottom: 15px;
+  font-family: "Century Gothic" !important;
   color: #1e3a2b !important;
 }
 

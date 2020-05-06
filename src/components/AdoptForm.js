@@ -165,11 +165,7 @@ export default class AdoptForm extends React.Component {
               {/* Gift checkbox */}
               <Form.Group controlId="formBasicCheckbox">
                 <div style={{ textAlign: "left" }}>
-                  <i
-                    style={{ color: "#f03434" }}
-                    class="fas fa-hand-holding-heart"
-                  ></i>{" "}
-                  &nbsp;
+                  <i className="fontawesome fas fa-gift"></i> &nbsp;
                   <input
                     type="checkbox"
                     id="giftCheckbox"

@@ -27,6 +27,7 @@ function IndexPage(props) {
       />
       <div className="is-pink" style={{ height: "1rem" }}></div>
       <FeaturesSection
+        opt="home"
         color="white"
         size="medium"
         title="in a nutshell"

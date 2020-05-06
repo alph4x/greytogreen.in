@@ -9,6 +9,7 @@ function Faq(props) {
           link={item.link}
           question={item.question}
           answer={item.answer}
+          route={item.route}
           key={index}
         />
       ))}

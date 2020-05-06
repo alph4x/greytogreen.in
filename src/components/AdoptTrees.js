@@ -124,7 +124,7 @@ export default class adoptComponent extends React.Component {
         };
         //send all details to server
         await axios
-          .post("https://api.greytogreen.in/getDetails/razorpay", objToSend)
+          .post("http://localhost:4500/getDetails/razorpay", objToSend)
           .then((res) => {
             //recieve success callback URL and redirect
             window.location = res.data;
@@ -147,13 +147,13 @@ export default class adoptComponent extends React.Component {
           };
           //send frontend details to server(DB) and get an ID
           await axios
-            .post("https://api.greytogreen.in/getDetails/paytm", objToSend)
+            .post("http://localhost:4500/getDetails/paytm", objToSend)
             .then((response) => {
               id = response.data.id;
             });
           //redirect to paytm payment page
           window.location =
-            "https://api.greytogreen.in/pay/paywithpaytm/:" +
+            "http://localhost:4500/pay/paywithpaytm/:" +
             id +
             "?amount=" +
             this.state.totalPrice;
@@ -183,7 +183,7 @@ export default class adoptComponent extends React.Component {
   async submitHandler() {
     //get server generated order details
     await axios
-      .post("https://api.greytogreen.in/pay/razorpay", {
+      .post("http://localhost:4500/pay/razorpay", {
         price: this.state.totalPrice,
       })
       .then((response) => {
@@ -244,7 +244,7 @@ export default class adoptComponent extends React.Component {
     return (
       <div className="main-container">
         <div id="sec1" className="sec1">
-          <h1 id="trees_title" className="title is-1 is-caslon center">
+          <h1 id="trees_title" className="title is-1 center">
             How many trees do you want to adopt/gift?
           </h1>
 

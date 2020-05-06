@@ -1,3 +1,49 @@
 #trackingId {
   font-size: 24px;
 }
+
+.adopt-btn {
+  background: #1d392a;
+  font-family: "Century Gothic", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  padding: 20px 15px;
+  position: relative;
+  top: 1vh;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#dlAnchor {
+  text-decoration: none;
+  color: inherit;
+}
+
+.loaderShow {
+  position: relative;
+  height: 1000px;
+}
+
+.loaderHide {
+  display: none;
+}
+
+#loader {
+  text-align: center;
+}
+
+#loader > span {
+  margin: 5vh 0;
+}
+
+#certStuff {
+  margin: 5vh 0;
+}
+
+.certBtns {
+  margin: 2vh 0;
+  text-align: center;
+}

@@ -26,11 +26,12 @@ function FaqItem(props) {
 
       {expanded && (
         <div className="subtitle">
-          {props.answer}{" "}
+          {props.answer}
+
           <span
             className="faqLink"
             onClick={() => {
-              router.push("/contact");
+              router.push(`/${props.route}`);
             }}
           >
             {props.link}

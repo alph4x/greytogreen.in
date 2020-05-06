@@ -13,7 +13,7 @@ export default class TrackingId extends React.Component {
 
   async checkViewChange() {
     //DB fetch call to get lat & long
-    await Axios.post("https://api.greytogreen.in/getUserDetails", {
+    await Axios.post("http://localhost:4500/getUserDetails", {
       trackingId: this.state.trackingId,
     }).then((res) => this.setState({ user: res.data[0] }));
 

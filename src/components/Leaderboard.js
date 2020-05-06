@@ -48,11 +48,7 @@ const List = (props) => (
         personName={
           person.gift ? (
             <p>
-              <i
-                style={{ color: "#f03434" }}
-                class="fas fa-hand-holding-heart"
-              ></i>{" "}
-              &nbsp;
+              <i className="fontawesome fas fa-gift"></i> &nbsp;
               {person.giftTo}
             </p>
           ) : (
@@ -76,8 +72,8 @@ const Header = () => (
       src="https://user-images.githubusercontent.com/23297041/55285200-a24e9b00-538f-11e9-8990-d49a162824d1.png"
     />
     <h1 className="header__title">
-      Impact
-      <span>Leaderboard</span>
+      Our
+      <span>contributors</span>
     </h1>
   </div>
 );
@@ -113,7 +109,7 @@ class App extends React.Component {
 
   async getLeaderboardRecent() {
     await Axios.get(
-      "https://api.greytogreen.in/getUserDetails/leaderboard/recent"
+      "http://localhost:4500/getUserDetails/leaderboard/recent"
     ).then(async (res) => {
       await this.setState({ recentList: res.data, loading: false });
       console.log(this.state.recentList);
@@ -122,7 +118,7 @@ class App extends React.Component {
 
   async getLeaderboardMost() {
     await Axios.get(
-      "https://api.greytogreen.in/getUserDetails/leaderboard/most"
+      "http://localhost:4500/getUserDetails/leaderboard/most"
     ).then(async (res) => {
       await this.setState({ mostList: res.data, loading: false });
       console.log("most", this.state.mostList);

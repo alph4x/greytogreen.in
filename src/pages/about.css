@@ -1,0 +1,33 @@
+.costBreakdown {
+  display: block;
+  margin: 10vh auto;
+  width: 100%;
+}
+
+.costBreakdown > img {
+  margin-top: 2vh;
+}
+
+.ourStory {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  box-shadow: 5px 5px 20px 0 rgba(20, 20, 20, 0.09);
+  padding: 2rem;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  .costBreakdown {
+    width: 75%;
+  }
+
+  .ourStory {
+    width: 75%;
+  }
+}

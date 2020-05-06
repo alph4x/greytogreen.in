@@ -15,7 +15,7 @@ export default class SecretAccess extends React.Component {
   }
 
   async checkDb() {
-    await Axios.post("http://localhost:4500/planted", {
+    await Axios.post("https://api.greytogreen.in/planted", {
       trackingId: this.state.trackingId,
       password: this.state.password,
       plantedLat: parseFloat(this.state.lat),

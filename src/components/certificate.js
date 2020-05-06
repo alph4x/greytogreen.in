@@ -12,7 +12,7 @@ export default class Certificate extends React.Component {
 
   async componentWillMount() {
     const trackingId = queryString.parse(window.location.search).trackingId;
-    await Axios.post("http://localhost:4500/getUserDetails/certificate", {
+    await Axios.post("https://api.greytogreen.in/getUserDetails/certificate", {
       trackingId: trackingId,
     }).then(async (res) => {
       await this.setState({ user: res.data[0] });

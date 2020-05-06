@@ -330,7 +330,7 @@
                                       (e.next = 3),
                                       axios__WEBPACK_IMPORTED_MODULE_13___default.a
                                         .post(
-                                          "http://localhost:4500/getDetails/razorpay",
+                                          "https://api.greytogreen.in/getDetails/razorpay",
                                           a
                                         )
                                         .then(function (e) {
@@ -379,7 +379,7 @@
                                         (e.next = 3),
                                         axios__WEBPACK_IMPORTED_MODULE_13___default.a
                                           .post(
-                                            "http://localhost:4500/getDetails/paytm",
+                                            "https://api.greytogreen.in/getDetails/paytm",
                                             n
                                           )
                                           .then(function (e) {
@@ -388,7 +388,7 @@
                                       );
                                     case 3:
                                       window.location =
-                                        "http://localhost:4500/pay/paywithpaytm/:" +
+                                        "https://api.greytogreen.in/pay/paywithpaytm/:" +
                                         a +
                                         "?amount=" +
                                         this.state.totalPrice;
@@ -439,7 +439,7 @@
                                   (e.next = 2),
                                   axios__WEBPACK_IMPORTED_MODULE_13___default.a
                                     .post(
-                                      "http://localhost:4500/pay/razorpay",
+                                      "https://api.greytogreen.in/pay/razorpay",
                                       { price: this.state.totalPrice }
                                     )
                                     .then(function (e) {
@@ -2289,7 +2289,7 @@
                                 (e.next = 2),
                                 Y.a
                                   .get(
-                                    "http://localhost:4500/getUserDetails/leaderboard/recent"
+                                    "https://api.greytogreen.in/getUserDetails/leaderboard/recent"
                                   )
                                   .then(
                                     (function () {
@@ -2349,7 +2349,7 @@
                                 (e.next = 2),
                                 Y.a
                                   .get(
-                                    "http://localhost:4500/getUserDetails/leaderboard/most"
+                                    "https://api.greytogreen.in/getUserDetails/leaderboard/most"
                                   )
                                   .then(
                                     (function () {
@@ -3232,7 +3232,7 @@
           var t = e.name,
             a = e.email,
             n = e.message;
-          return Y.a.post("http://localhost:4500/contact", {
+          return Y.a.post("https://api.greytogreen.in/contact", {
             name: t,
             email: a,
             message: n,
@@ -3795,7 +3795,7 @@
                                   (e.next = 2),
                                   Y.a
                                     .post(
-                                      "http://localhost:4500/getUserDetails",
+                                      "https://api.greytogreen.in/getUserDetails",
                                       { trackingId: this.state.trackingId }
                                     )
                                     .then(function (e) {
@@ -4316,12 +4316,19 @@
                                   return (
                                     (e.next = 2),
                                     Y.a
-                                      .post("http://localhost:4500/planted", {
-                                        trackingId: this.state.trackingId,
-                                        password: this.state.password,
-                                        plantedLat: parseFloat(this.state.lat),
-                                        plantedLng: parseFloat(this.state.lng),
-                                      })
+                                      .post(
+                                        "https://api.greytogreen.in/planted",
+                                        {
+                                          trackingId: this.state.trackingId,
+                                          password: this.state.password,
+                                          plantedLat: parseFloat(
+                                            this.state.lat
+                                          ),
+                                          plantedLng: parseFloat(
+                                            this.state.lng
+                                          ),
+                                        }
+                                      )
                                       .then(function (e) {
                                         t.setState({ user: e.data });
                                       })

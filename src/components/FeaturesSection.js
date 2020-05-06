@@ -46,7 +46,7 @@ function FeaturesSection(props) {
               {
                 title: "certificate of appreciation",
                 body:
-                  "we honor our with certificates that you can additionally also opt to get printed and framed ",
+                  "we honor you with certificates that you can additionally also opt to get printed and framed ",
                 image: feature_cert,
               },
             ]}

@@ -29,9 +29,9 @@ export default class HeroSection extends React.Component {
 
   componentDidMount() {
     Axios.get("https://api.greytogreen.in/getUserDetails/totalPlanted").then(
-      (res) => {
-        this.setState({ totalTreesPlanted: res.data.totalTreesPlanted });
-        this.animateValue("treesNum", 0, this.state.totalTreesPlanted, 2000);
+      async (res) => {
+        await this.setState({ totalTreesPlanted: res.data.totalTreesPlanted });
+        this.animateValue("treesNum", 0, this.state.totalTreesPlanted, 3000);
       }
     );
     //enter values for total trees planted here

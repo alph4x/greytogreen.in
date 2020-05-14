@@ -29,10 +29,9 @@ export default class AboutPage extends React.Component {
               the lack of trees in the capital. A phone call to a fellow
               dendrophile, a compassionate friend and multiple endless
               long-drives led to what we would now like to introduce as Grey To
-              Green. A work in progress for a year and a half now, Grey To Green
-              aims to provide a platform and service which will equip anybody
-              and everybody to adopt trees with the click of a button. Let’s
-              make this world a greener place. Together.
+              Green. Grey To Green aims to provide a platform and service which
+              will equip anybody and everybody to adopt trees with the click of
+              a button. Let’s make this world a greener place. Together.
             </p>
           </div>
           <div className="costBreakdown">

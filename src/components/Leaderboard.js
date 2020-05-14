@@ -35,11 +35,11 @@ const List = (props) => (
     {props.list.map((person) => (
       <Person
         personImg={
-          person.numTrees <= 30
-            ? person.numTrees <= 10
+          person.trees <= 30
+            ? person.trees <= 10
               ? icon1
               : icon2
-            : person.numTrees <= 100
+            : person.trees < 100
             ? icon3
             : icon4
         }
@@ -58,7 +58,7 @@ const List = (props) => (
         personMessage={
           person.gift ? <p>{person.giftMessage}</p> : <p>{person.message}</p>
         }
-        personTrees={person.numTrees}
+        personTrees={person.trees}
       />
     ))}
   </div>
@@ -101,33 +101,45 @@ class App extends React.Component {
     loading: true,
   };
 
+  // componentDidMount() {
+  //   document
+  //     .getElementById("leaderboard_app")
+  //     .addEventListener("scroll", this.getLead.bind(this), true);
+  // }
+
   componentWillMount() {
     // this.getLeaderboard();
-    this.getLeaderboardRecent();
-    this.getLeaderboardMost();
+    //this.getLeaderboardRecent();
+    //this.getLeaderboardMost();
+    this.getLead();
   }
 
-  async getLeaderboardRecent() {
-    await Axios.get(
+  getLeaderboardRecent() {
+    Axios.get(
       "https://api.greytogreen.in/getUserDetails/leaderboard/recent"
     ).then(async (res) => {
-      await this.setState({ recentList: res.data, loading: false });
+      this.setState({ recentList: res.data, loading: false });
       console.log(this.state.recentList);
     });
   }
 
-  async getLeaderboardMost() {
-    await Axios.get(
+  getLeaderboardMost() {
+    Axios.get(
       "https://api.greytogreen.in/getUserDetails/leaderboard/most"
-    ).then(async (res) => {
-      await this.setState({ mostList: res.data, loading: false });
+    ).then((res) => {
+      this.setState({ mostList: res.data, loading: false });
       console.log("most", this.state.mostList);
     });
   }
 
+  getLead() {
+    this.getLeaderboardRecent();
+    this.getLeaderboardMost();
+  }
+
   render() {
     return (
-      <div className="app is-century">
+      <div id="leaderboard_app" className="app is-century">
         <Header />
 
         {this.state.loading && <LoadingIndicator />}

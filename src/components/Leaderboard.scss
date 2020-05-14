@@ -2,10 +2,14 @@
   position: relative;
   width: 100%;
   margin: auto auto;
-
+  height: 580px;
+  overflow-y: scroll;
   box-shadow: 5px 5px 20px 0 rgba(20, 20, 20, 0.09);
   border-radius: 12px;
   text-transform: none !important;
+
+  .tab_content {
+  }
 
   .header {
     display: flex;
@@ -45,9 +49,9 @@
   .list {
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: auto;
     padding: 20px 0 40px;
-    overflow-y: scroll;
+    // overflow-y: scroll !important;
     box-shadow: none !important;
 
     &__person {
@@ -141,7 +145,8 @@
 
 @media screen and (max-width: 430px) {
   .app {
-    max-width: 320px;
+    // max-width: 320px;
+    max-width: 100%;
 
     .list__person {
       padding: 4px 12px;

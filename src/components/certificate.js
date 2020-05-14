@@ -16,6 +16,7 @@ export default class Certificate extends React.Component {
       trackingId: trackingId,
     }).then(async (res) => {
       await this.setState({ user: res.data[0] });
+      console.log(this.state.user);
     });
   }
 
@@ -28,21 +29,36 @@ export default class Certificate extends React.Component {
         className="is-century"
         style={{
           background: `url(${certTemplate})`,
-          backgroundSize: "contain ",
+          backgroundSize: "contain",
+          WebkitBackgroundSize: "cover",
         }}
       >
         <p id="cert_text">
           this certifies that{" "}
           <span id="personTrees">
-            <b>{this.state.user.numTrees}</b>
+            <b>{this.state.user.trees} tree(s)</b>
           </span>{" "}
-          trees were planted <br></br> in the name of
+          were planted <br></br> in the name of
         </p>
         <span id="personName">
-          <b>{this.state.user.name}</b>
+          <b>
+            {this.state.user.gift
+              ? this.state.user.giftTo
+              : this.state.user.name}
+          </b>
         </span>
+        {this.state.user.gift ? (
+          <p id="certTextGift">
+            as a gift from{" "}
+            <span id="giftFromName">
+              <b>{this.state.user.giftFrom}</b>
+            </span>
+          </p>
+        ) : (
+          <p></p>
+        )}
         <br></br>
-        <span id="personDate">
+        <span id="personDate" style={{ textTransform: "none" }}>
           {new Date(this.state.user.date).toLocaleDateString()}
         </span>
       </div>

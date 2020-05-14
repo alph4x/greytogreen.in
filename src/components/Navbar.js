@@ -40,6 +40,17 @@ function Navbar(props) {
               document
                 .getElementById("navlinksContainer")
                 .classList.remove("is-active");
+              router.push("/adopt");
+            }}
+          >
+            ADOPT
+          </span>
+          <span
+            className="navlink is-century"
+            onClick={() => {
+              document
+                .getElementById("navlinksContainer")
+                .classList.remove("is-active");
               router.push("/track");
             }}
           >
@@ -62,7 +73,7 @@ function Navbar(props) {
               document
                 .getElementById("navlinksContainer")
                 .classList.remove("is-active");
-              router.push("/aboutus");
+              router.push("/about");
             }}
           >
             About

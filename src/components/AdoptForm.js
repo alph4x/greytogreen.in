@@ -16,6 +16,7 @@ export default class AdoptForm extends React.Component {
   }
 
   async getEmail(e) {
+    //validate email
     await this.setState({ email: e.target.value });
   }
 
@@ -178,8 +179,8 @@ export default class AdoptForm extends React.Component {
                 </div>
 
                 <Form.Text className="text-muted" style={{ textAlign: "left" }}>
-                  We’ll send a certificate to your email address, which you can
-                  forward along or print.
+                  We’ll issue you a certificate upon successful payment, which
+                  you can forward along or print and send.
                   <span
                     onClick={this.certificateShow.bind(this)}
                     style={{ textDecoration: "underline", cursor: "pointer" }}
@@ -209,6 +210,7 @@ export default class AdoptForm extends React.Component {
                   </Form.Label>
                   <Form.Control
                     type="name"
+                    // defaultValue={this.state.name}
                     placeholder="Your Name or Nickname"
                     onChange={this.getGiftFrom.bind(this)}
                   />

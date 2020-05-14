@@ -1,14 +1,16 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import SectionHeader from "../components/SectionHeader";
 import Section from "../components/Section";
 import thankyouImg from "../assets/images/thanks_for_adopting_illustration.png";
 import "./thankyou.css";
 import queryString from "query-string";
-import Certificate from "../components/certificate";
+// import Certificate from "../components/certificate";
 import FileSaver from "file-saver";
 import htmlToImage from "html-to-image";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import Axios from "axios";
 
 export default class Thankyou extends React.Component {
   constructor(props) {
@@ -20,31 +22,25 @@ export default class Thankyou extends React.Component {
     // fetch tracking ID from URL params
     const trackingId = queryString.parse(window.location.search).trackingId;
     await this.setState({ trackingId });
-    // console.log("xxxxx");
   }
 
   downloadBtnHandler() {}
 
   componentDidMount() {
-    setTimeout(() => {
-      var imgNode = document.getElementById("cert_content");
-      htmlToImage
-        .toPng(imgNode)
-        .then(function (dataUrl) {
-          var img = new Image();
-          img.id = "certGenImg";
-          img.src = dataUrl;
-          document.getElementById("cert-img").appendChild(img);
-          document.getElementById("cert_content").style.display = "none";
-          document.getElementById("loader").classList.remove("loaderShow");
-          document.getElementById("loader").classList.add("loaderHide");
-          var url = document.getElementById("certGenImg").src;
-          document.getElementById("dlAnchor").href = url;
-        })
-        .catch(function (error) {
-          console.error("oops, something went wrong!", error);
-        });
-    }, 3000);
+    // Axios.post("https://api.greytogreen.in/getUserDetails/certificate", {
+    Axios.post("http://localhost:4500/getUserDetails/certificate", {
+      trackingId: this.state.trackingId,
+    }).then((res) => {
+      const base64Img = "data:image/png;base64, " + res.data;
+      var img = new Image();
+      img.id = "certGenImg";
+      img.src = base64Img;
+      document.getElementById("certImgDiv").appendChild(img);
+      document.getElementById("loader").classList.remove("loaderShow");
+      document.getElementById("loader").classList.add("loaderHide");
+      var url = document.getElementById("certGenImg").src;
+      document.getElementById("dlAnchor").href = url;
+    });
   }
 
   render() {
@@ -59,7 +55,7 @@ export default class Thankyou extends React.Component {
               using the tracking ID given below:
             </p>
             <p id="trackingText">
-              <span id="trackingId">
+              <span id="trackingId" style={{ textTransform: "none" }}>
                 <b>{this.state.trackingId}</b>
               </span>
               <span style={{ display: "block" }} className="text-muted">
@@ -70,17 +66,15 @@ export default class Thankyou extends React.Component {
           <div id="loader" className="loaderShow">
             <Loader
               type="Puff"
-              color="#00BFFF"
+              color="#577F67"
               height={100}
               width={100}
-              timeout={4000} //3 secs
+              timeout={70000} //3 secs
             />
             <span>Please wait while we generate your certificate</span>
           </div>
           <div id="certStuff">
-            <div id="cert-img" className="container">
-              <Certificate />
-            </div>
+            <div id="certImgDiv"></div>
             <div className="row certBtns">
               <div className="col">
                 <span
@@ -91,6 +85,10 @@ export default class Thankyou extends React.Component {
                   <a id="dlAnchor" download="My Certificate | GreyToGreen">
                     Download your certificate
                   </a>
+                </span>
+                <br></br>
+                <span className="is-century">
+                  and share it on your social media!
                 </span>
               </div>
               <div className="col">

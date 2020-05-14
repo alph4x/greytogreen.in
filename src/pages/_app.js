@@ -18,23 +18,19 @@ import SecretAccess from "./SecretAccess";
 import Thankyou from "./thankyou";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import ReactGA from "react-ga";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isLoading: false };
+    this.initializeReactGA();
   }
 
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //     document
-  //       .getElementById("loaderContainer")
-  //       .classList.remove("showContainer");
-  //     document.getElementById("loaderContainer").classList.add("hideContainer");
-  //     document.getElementById("appContainer").classList.remove("hideContainer");
-  //     document.getElementById("appContainer").classList.add("showContainer");
-  //   }, 2000);
-  // }
+  initializeReactGA() {
+    ReactGA.initialize("UA-165947338-1");
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
 
   render() {
     return (

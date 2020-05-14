@@ -5,13 +5,14 @@ import logo from "../assets/images/LOGO-2.png";
 import AdoptForm from "./AdoptForm.js";
 import axios from "axios";
 import $ from "jquery";
+import Swal from "sweetalert2";
 
 export default class adoptComponent extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      numTrees: 4, //Default no of trees
-      treePrice: 10, //Change tree price here (this will be static)
+      numTrees: 1, //Default no of trees
+      treePrice: 49, //Change tree price here (this will be static)
       totalPrice: 0, //Default no of trees' price (don't change here, gets calculated automatically later)
       first_term: 5,
       inputLength: 1,
@@ -25,6 +26,9 @@ export default class adoptComponent extends React.Component {
     var num = this.state.numTrees;
     // eslint-disable-next-line no-eval
     var newNum = eval(num + operator + 1);
+    if (newNum <= 0) {
+      newNum = 0;
+    }
     await this.updateConf(newNum);
   }
 
@@ -136,6 +140,9 @@ export default class adoptComponent extends React.Component {
           let id;
           let objToSend = {
             ...data,
+            name: this.state.name,
+            email: this.state.email,
+            phone: this.state.phone,
             message: this.state.message,
             gift: this.state.gift,
             giftTo: this.state.giftTo,
@@ -229,6 +236,10 @@ export default class adoptComponent extends React.Component {
     console.log(this.state);
   }
 
+  showUnitSwal() {
+    Swal.fire("This is gonna be a fact");
+  }
+
   btnHandler() {
     document.getElementById("sec2").style.display = "block";
     $("html, body").animate(
@@ -247,6 +258,15 @@ export default class adoptComponent extends React.Component {
           <h1 id="trees_title" className="title is-1 center">
             How many trees do you want to adopt/gift?
           </h1>
+          {/* <p style={{ textAlign: "center" }}>
+            <span
+              id="adoptUnitMeasure"
+              className="text-muted is-century"
+              onClick={this.showUnitSwal.bind(this)}
+            >
+              Click me for a unit reference
+            </span>
+          </p> */}
 
           {/* COUNTER */}
           <center>
@@ -280,7 +300,7 @@ export default class adoptComponent extends React.Component {
             </div>
           </center>
           <div className="counter-undertext center">
-            {this.state.numTrees} plants for{" "}
+            {this.state.numTrees} plant(s) for{" "}
             <span className="price">&#8377;{this.state.totalPrice}</span>
           </div>
           {/* TREE GRID */}

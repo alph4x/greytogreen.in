@@ -28,7 +28,7 @@ function FeaturesSection(props) {
               {
                 title: "adopt with just a click",
                 body:
-                  "we provde a user-friendly platform through which adopting & planting saplingssud is only a click of buttons away!",
+                  "we provde a user-friendly platform through which adopting & planting saplings is only a click of a button away!",
                 image: feature_adoptwith1,
               },
               {

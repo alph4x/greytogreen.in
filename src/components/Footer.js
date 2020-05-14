@@ -58,7 +58,7 @@ function Footer(props) {
                     <li>
                       <Link to="/contact">Contact</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <a
                         target="_blank"
                         href="https://medium.com"
@@ -66,7 +66,7 @@ function Footer(props) {
                       >
                         Blog
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
@@ -89,7 +89,7 @@ function Footer(props) {
                     </li>
                     <li>
                       <a
-                        href="https://facebook.com"
+                        href="https://www.facebook.com/greytogreen.in/?modal=admin_todo_tour"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -103,7 +103,7 @@ function Footer(props) {
 
                     <li>
                       <a
-                        href="https://twitter.com"
+                        href="https://twitter.com/greytogreen_in"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

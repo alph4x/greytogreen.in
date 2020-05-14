@@ -21,7 +21,7 @@ export default class HeroSection extends React.Component {
     var timer = setInterval(function () {
       current += increment;
       obj.innerHTML = current;
-      if (current == end) {
+      if (current === end) {
         clearInterval(timer);
       }
     }, stepTime);
@@ -31,10 +31,11 @@ export default class HeroSection extends React.Component {
     Axios.get("https://api.greytogreen.in/getUserDetails/totalPlanted").then(
       async (res) => {
         await this.setState({ totalTreesPlanted: res.data.totalTreesPlanted });
-        this.animateValue("treesNum", 0, this.state.totalTreesPlanted, 3000);
+        //enter values for total trees planted here
+        this.animateValue("treesNum", 0, this.state.totalTreesPlanted, 2500);
       }
     );
-    //enter values for total trees planted here
+
     setTimeout(() => {}, 2000);
   }
 
@@ -104,7 +105,7 @@ export default class HeroSection extends React.Component {
                 letterSpacing: "-1px",
               }}
             >
-              TREES PLANTED
+              TREES ADOPTED
             </span>
           </div>
         </div>

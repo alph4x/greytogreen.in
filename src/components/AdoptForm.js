@@ -4,24 +4,62 @@ import "./adoptForm.css";
 import { Jumbotron, Container, Card, Form, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import certificate from "../assets/images/certificate.png";
+import validator from "validator";
 
 export default class AdoptForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { gift: false };
+    this.state = {
+      isName: false,
+      isEmail: false,
+      isPhone: false,
+      gift: false,
+      isGiftTo: false,
+      isGiftFrom: false,
+      isValidated: false,
+    };
   }
 
   async getName(e) {
+    e.persist();
     await this.setState({ name: e.target.value });
+    if (validator.isLength(this.state.name, { min: 1, max: 15 })) {
+      this.setState({ isName: true });
+      document.getElementById("formName").classList.add("entryValidated");
+    } else {
+      this.setState({ isName: false });
+      document.getElementById("formName").classList.add("formInvalid");
+      document.getElementById("formName").classList.remove("entryValidated");
+    }
   }
 
   async getEmail(e) {
+    e.persist();
     //validate email
     await this.setState({ email: e.target.value });
+    if (validator.isEmail(this.state.email)) {
+      this.setState({ isEmail: true });
+      document.getElementById("formBasicEmail").classList.add("entryValidated");
+    } else {
+      this.setState({ isEmail: false });
+      document.getElementById("formBasicEmail").classList.add("formInvalid");
+      document
+        .getElementById("formBasicEmail")
+        .classList.remove("entryValidated");
+    }
   }
 
   async getPhone(e) {
+    e.persist();
     await this.setState({ phone: e.target.value });
+    if (validator.isMobilePhone(this.state.phone)) {
+      this.setState({ isPhone: true });
+      document.getElementById("formPhone").classList.add("entryValidated");
+    } else {
+      this.setState({ isPhone: false });
+      document.getElementById("formPhone").classList.add("formInvalid");
+      document.getElementById("formPhone").classList.remove("entryValidated");
+    }
   }
 
   async getFormMessage(e) {
@@ -43,11 +81,41 @@ export default class AdoptForm extends React.Component {
   }
 
   async getGiftTo(e) {
+    e.persist();
     await this.setState({ giftTo: e.target.value });
+    if (
+      validator.isLength(this.state.giftTo, {
+        min: 1,
+        max: 10,
+      })
+    ) {
+      this.setState({ isGiftTo: true });
+      document.getElementById("formGiftTo").classList.add("entryValidated");
+    } else {
+      this.setState({ isGiftTo: false });
+      document.getElementById("formGiftTo").classList.add("formInvalid");
+      document.getElementById("formGiftTo").classList.remove("entryValidated");
+    }
   }
 
   async getGiftFrom(e) {
+    e.persist();
     await this.setState({ giftFrom: e.target.value });
+    if (
+      validator.isLength(this.state.giftFrom, {
+        min: 1,
+        max: 10,
+      })
+    ) {
+      this.setState({ isGiftFrom: true });
+      document.getElementById("formGiftFrom").classList.add("entryValidated");
+    } else {
+      this.setState({ isGiftFrom: false });
+      document.getElementById("formGiftFrom").classList.add("formInvalid");
+      document
+        .getElementById("formGiftFrom")
+        .classList.remove("entryValidated");
+    }
   }
 
   async getGiftMessage(e) {
@@ -64,22 +132,40 @@ export default class AdoptForm extends React.Component {
   }
 
   async onSubmitHandler(e) {
-    e.preventDefault();
-    //send form details
-    let formData = {
-      name: this.state.name,
-      email: this.state.email,
-      phone: this.state.phone,
-      message: this.state.message,
-      gift: this.state.gift,
-      giftTo: this.state.giftTo,
-      giftFrom: this.state.giftFrom,
-      giftMessage: this.state.giftMessage,
-    };
-    await this.props.getFormDetails(formData);
-    //call server & razorpay function
-    let paynowFn = this.props.payNow;
-    paynowFn();
+    if (
+      this.state.isName &&
+      this.state.isEmail &&
+      this.state.isPhone &&
+      (this.state.gift ? this.state.isGiftTo && this.state.isGiftFrom : {})
+    ) {
+      await this.setState({ isValidated: true });
+    } else {
+      await this.setState({ isValidated: false });
+      Swal.fire(
+        "Details incomplete",
+        "Please ensure that all the mandatory fields have been filled",
+        "error"
+      );
+    }
+
+    if (this.state.isValidated === true) {
+      // e.preventDefault();
+      //send form details
+      let formData = {
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        message: this.state.message,
+        gift: this.state.gift,
+        giftTo: this.state.giftTo,
+        giftFrom: this.state.giftFrom,
+        giftMessage: this.state.giftMessage,
+      };
+      await this.props.getFormDetails(formData);
+      //call server & razorpay function
+      let paynowFn = this.props.payNow;
+      paynowFn();
+    }
   }
 
   render() {
@@ -127,6 +213,7 @@ export default class AdoptForm extends React.Component {
               {/* Display name */}
               <Form.Group>
                 <Form.Control
+                  id="formName"
                   type="name"
                   placeholder="Display name"
                   onChange={this.getName.bind(this)}
@@ -146,6 +233,7 @@ export default class AdoptForm extends React.Component {
               {/* Phone */}
               <Form.Group>
                 <Form.Control
+                  id="formPhone"
                   type="number"
                   placeholder="Phone number"
                   onChange={this.getPhone.bind(this)}
@@ -154,6 +242,7 @@ export default class AdoptForm extends React.Component {
               {/* Message */}
               <Form.Group>
                 <Form.Control
+                  id="formMessage"
                   as="textarea"
                   rows="3"
                   placeholder=" My #greytogreen message is.."
@@ -198,6 +287,7 @@ export default class AdoptForm extends React.Component {
                   </Form.Label>
 
                   <Form.Control
+                    id="formGiftTo"
                     type="name"
                     placeholder="Recipient Name or Nickname"
                     onChange={this.getGiftTo.bind(this)}
@@ -209,8 +299,8 @@ export default class AdoptForm extends React.Component {
                     From
                   </Form.Label>
                   <Form.Control
+                    id="formGiftFrom"
                     type="name"
-                    // defaultValue={this.state.name}
                     placeholder="Your Name or Nickname"
                     onChange={this.getGiftFrom.bind(this)}
                   />

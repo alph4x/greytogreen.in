@@ -32,7 +32,8 @@
     "react-loader-spinner": "^3.1.14",
     "react-router-dom": "5.1.0",
     "react-scripts": "3.2.0",
-    "sweetalert2": "^9.10.12"
+    "sweetalert2": "^9.10.12",
+    "validator": "^13.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

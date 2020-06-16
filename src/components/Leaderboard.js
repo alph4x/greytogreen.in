@@ -119,7 +119,6 @@ class App extends React.Component {
       "https://api.greytogreen.in/getUserDetails/leaderboard/recent"
     ).then(async (res) => {
       this.setState({ recentList: res.data, loading: false });
-      console.log(this.state.recentList);
     });
   }
 
@@ -128,7 +127,6 @@ class App extends React.Component {
       "https://api.greytogreen.in/getUserDetails/leaderboard/most"
     ).then((res) => {
       this.setState({ mostList: res.data, loading: false });
-      console.log("most", this.state.mostList);
     });
   }
 

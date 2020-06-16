@@ -16,7 +16,6 @@ export default class Certificate extends React.Component {
       trackingId: trackingId,
     }).then(async (res) => {
       await this.setState({ user: res.data[0] });
-      console.log(this.state.user);
     });
   }
 

@@ -1,0 +1,23 @@
+#DB {
+  padding-top: 20px;
+  text-transform: none;
+}
+
+#newEntry {
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+#newEntryForm {
+  margin-bottom: 50px;
+}
+
+.formHide {
+  /* visibility: 0; */
+  display: none;
+}
+
+.formShow {
+  display: block;
+}

@@ -28,7 +28,7 @@ export default class Thankyou extends React.Component {
 
   componentDidMount() {
     Axios.post("https://api.greytogreen.in/getUserDetails/certificate", {
-      // Axios.post("http://localhost:4500/getUserDetails/certificate", {
+      // Axios.post("https://api.greytogreen.in/getUserDetails/certificate", {
       trackingId: this.state.trackingId,
     }).then((res) => {
       const base64Img = "data:image/png;base64, " + res.data;

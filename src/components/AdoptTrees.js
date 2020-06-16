@@ -42,7 +42,6 @@ export default class adoptComponent extends React.Component {
     var tp = this.state.treePrice;
     this.setState({ numTrees: newNum });
     this.setState({ totalPrice: newNum * tp });
-    console.log(this.state.totalPrice);
     document.getElementById("treesNumInput").value = newNum;
     const _tree = document.getElementsByClassName("tree");
     var delta = 20;
@@ -233,7 +232,6 @@ export default class adoptComponent extends React.Component {
       giftFrom: formData.giftFrom,
       giftMessage: formData.giftMessage,
     });
-    console.log(this.state);
   }
 
   showUnitSwal() {

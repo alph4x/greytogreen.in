@@ -19,6 +19,7 @@ import Thankyou from "./thankyou";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import ReactGA from "react-ga";
+import Database from "./database";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -69,6 +70,8 @@ export default class App extends React.Component {
                 <Route exact path="/pricing" component={PricingPage} />
 
                 <Route exact path="/contact" component={ContactPage} />
+
+                <Route exact path="/database" component={Database} />
 
                 <Route
                   component={({ location }) => {

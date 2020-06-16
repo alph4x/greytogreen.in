@@ -9,7 +9,6 @@ function Contact(props) {
     setStatus({ type: "pending" });
 
     contact.submit({ name, email, message }).then(() => {
-      console.log("submitted");
       setStatus({
         type: "success",
         message: "Your message has been sent! We'll get back to you soon.",

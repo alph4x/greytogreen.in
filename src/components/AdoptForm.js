@@ -14,6 +14,7 @@ export default class AdoptForm extends React.Component {
       isEmail: false,
       isPhone: false,
       gift: false,
+      giftType: null,
       isGiftTo: false,
       isGiftFrom: false,
       isValidated: false,
@@ -66,17 +67,37 @@ export default class AdoptForm extends React.Component {
     await this.setState({ message: e.target.value });
   }
 
-  async giftCheck(e) {
+  async giftOptionsCheck(e) {
     if (e.target.checked) {
+      await this.setState({ gift: !this.state.gift });
+      document.getElementById('generalCertText').className = 'toggleHide';
+      document.getElementById('giftOptions').className = 'toggleShow';
+      let giftOptionBtns = document.getElementsByClassName('giftOptionBtn');
+      for (const gift of giftOptionBtns) {
+        gift.addEventListener('click', async (e) => {
+          await this.setState({ giftType: e.target.parentElement.previousSibling.value })
+          this.giftFormCheck(true);
+        })
+      }
+    }
+    else {
+      document.getElementById('generalCertText').className = 'toggleShow';
+      document.getElementById('giftOptions').className = 'toggleHide';
+      await this.setState({ gift: !this.state.gift });
+    }
+  }
+
+  async giftFormCheck(check) {
+    if (check === true) {
       document.getElementById("giftForm").className = "toggleShow";
       document.getElementById("sec2").style.height =
         document.getElementById("sec2").offsetHeight + 270 + "px";
-      await this.setState({ gift: !this.state.gift });
+
     } else {
       document.getElementById("giftForm").className = "toggleHide";
       document.getElementById("sec2").style.height =
         document.getElementById("sec2").offsetHeight - 270 + "px";
-      await this.setState({ gift: !this.state.gift });
+
     }
   }
 
@@ -157,6 +178,7 @@ export default class AdoptForm extends React.Component {
         phone: this.state.phone,
         message: this.state.message,
         gift: this.state.gift,
+        giftType: this.state.giftType,
         giftTo: this.state.giftTo,
         giftFrom: this.state.giftFrom,
         giftMessage: this.state.giftMessage,
@@ -166,6 +188,10 @@ export default class AdoptForm extends React.Component {
       let paynowFn = this.props.payNow;
       paynowFn();
     }
+  }
+
+  recieveGiftOption(e) {
+
   }
 
   render() {
@@ -260,14 +286,13 @@ export default class AdoptForm extends React.Component {
                     type="checkbox"
                     id="giftCheckbox"
                     name="giftCheckbox"
-                    onChange={this.giftCheck.bind(this)}
+                    onChange={this.giftOptionsCheck.bind(this)}
                   />
                   <label for="giftCheckbox">
                     &nbsp; This is a gift for someone &nbsp;
                   </label>
                 </div>
-
-                <Form.Text className="text-muted" style={{ textAlign: "left" }}>
+                <Form.Text id='generalCertText' className="text-muted" style={{ textAlign: "left" }}>
                   We’ll issue you a certificate upon successful payment, which
                   you can forward along or print and send.
                   <span
@@ -278,6 +303,26 @@ export default class AdoptForm extends React.Component {
                   </span>
                 </Form.Text>
               </Form.Group>
+              {/* Choose which gift? */}
+              <Form.Group id='giftOptions' className='toggleHide'>
+                <input value='1' id='1' type='radio' name='gift'></input>
+                <label className='giftOptionBtn' for='1'>
+                  <img src='https://www.svgrepo.com/show/229975/hat-birthday.svg'></img>
+                </label>
+                <input value='2' id='2' type='radio' name='gift'></input>
+                <label className='giftOptionBtn' for='2'>
+                  <img src='https://www.svgrepo.com/show/229975/hat-birthday.svg'></img>
+                </label>
+                <input value='3' id='3' type='radio' name='gift'></input>
+                <label className='giftOptionBtn' for='3'>
+                  <img src='https://www.svgrepo.com/show/229975/hat-birthday.svg'></img>
+                </label>
+                <input value='4' id='4' type='radio' name='gift'></input>
+                <label className='giftOptionBtn' for='4'>
+                  <img src='https://www.svgrepo.com/show/229975/hat-birthday.svg'></img>
+                </label>
+              </Form.Group>
+
               {/* Gift div */}
               <div id="giftForm" className="toggleHide">
                 {/* TO */}

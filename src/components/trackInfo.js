@@ -2,7 +2,7 @@ import React from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Map from "google-map-react";
-import marker from "../assets/images/LOGO-single.png";
+import marker from "../assets/images/3d-marker.jpg";
 import { Card } from "react-bootstrap";
 import "./trackInfo.css";
 import cardTitleImg from "../assets/images/tree2.png";
@@ -81,7 +81,7 @@ export default class TrackInfo extends React.Component {
                     </div>
                     <div id="saplingsDiv" className="saplings-txt ">
                       <span className="sap-no is-caslon" id="sap-no">
-                        {this.state.user.numTrees}
+                        {this.state.user.trees}
                       </span>
                       <p className="sap-txt is-century">saplings</p>
                     </div>

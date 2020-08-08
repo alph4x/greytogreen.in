@@ -6,6 +6,10 @@
   /* left: -4.2vw; */
 }
 
+.userProfileName {
+  text-transform: none !important;
+}
+
 .trackingInfoContainer {
   z-index: 2000;
   margin-top: 30vh;

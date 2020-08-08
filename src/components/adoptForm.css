@@ -26,6 +26,40 @@
   padding: 10px;
 }
 
+.giftCheckbox{
+  display: none;
+}
+
+/* hiding radio buttons */
+input[type='radio'] {
+   display: relative;
+   height: 0px;
+   width: 0px;
+}
+
+input[type='radio']:checked + label {
+  background: pink;
+}
+
+#giftOptions {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.giftOptionBtn {
+  padding: 5px;
+  border: 0.5px solid grey;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.giftOptionBtn:hover {
+  background-color: pink;
+}
+
+
 /* overriding bootstrap form color */
 .formInvalid {
   border-color: #ff0000;

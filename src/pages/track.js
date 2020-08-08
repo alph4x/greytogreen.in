@@ -15,6 +15,7 @@ export default class Track extends React.Component {
   async viewChange(view, userDetails) {
     if (view === 2) {
       await this.setState({ user: userDetails, view: 2 });
+      console.log(this.state.user);
     }
   }
 

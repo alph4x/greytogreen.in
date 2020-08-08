@@ -27,9 +27,9 @@ export default class DBUser extends React.Component {
           trackingId: trackingId,
         }).then(() => {});
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 2000);
       }
     });
   }

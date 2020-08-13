@@ -2,18 +2,30 @@ import React from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Map from "google-map-react";
-import marker from "../assets/images/3d-marker.jpg";
+import marker from "../assets/images/3d-marker.png";
 import { Card } from "react-bootstrap";
 import "./trackInfo.css";
 import cardTitleImg from "../assets/images/tree2.png";
-import x from "../assets/images/tree4.png";
+import icon1 from "../assets/images/tree1.png";
+import icon2 from "../assets/images/tree2.png";
+import icon3 from "../assets/images/tree3.png";
+import icon4 from "../assets/images/tree4.png";
 import circleTree from "../assets/images/tracking-tree.png";
 import circleCalendar from "../assets/images/tracking-calendar.png";
 import { Link } from "../util/router";
 
-const AnyReactComponent = ({ text }) => (
+const CustomMarkerComponent = ({ text }) => (
   <div>
-    <img style={{ height: "45px" }} src={marker} alt=""></img>
+    <img
+      style={{
+        height: "90px",
+        top: "45%",
+        left: "50%",
+        transform: "translate(-65%, -65%)",
+      }}
+      src={marker}
+      alt=""
+    ></img>
   </div>
 );
 
@@ -49,7 +61,7 @@ export default class TrackInfo extends React.Component {
               defaultCenter={this.options.center}
               defaultZoom={this.options.zoom}
             >
-              <AnyReactComponent
+              <CustomMarkerComponent
                 lat={this.state.lat}
                 lng={this.state.lng}
                 text="My Marker"
@@ -60,7 +72,19 @@ export default class TrackInfo extends React.Component {
             <div className="trackingCard">
               <br />
               <div className="userProfile">
-                <img className="userProfileImg" src={x} alt="" />
+                <img
+                  className="userProfileImg"
+                  src={
+                    this.state.user.trees <= 30
+                      ? this.state.user.trees <= 10
+                        ? icon1
+                        : icon2
+                      : this.state.user.trees < 100
+                      ? icon3
+                      : icon4
+                  }
+                  alt=""
+                />
                 <p className="is-caslon userProfileName">
                   {this.state.user.gift ? (
                     <p>

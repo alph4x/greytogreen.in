@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "keywords": [
-    "divjoy",
+    "sustainability",
     "greytogreen.in",
     "earth",
     "deforestation",
     "green earth",
-    "plant trees"
+    "plant trees",
+    "plant india",
+    "india"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
